@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
-  m_Name: Data
+  m_Name: steam
   m_EditorClassIdentifier: 
-  name: 
-  id: 
+  name: steam
+  id: 3
   sprite: {fileID: 0}
-  recepie: []
+  recipes:
+  - container:
+    - water
+    - fire

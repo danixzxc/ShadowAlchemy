@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
   m_Name: water
   m_EditorClassIdentifier: 
-  name: 
-  id: 
+  name: water
+  id: 2
   sprite: {fileID: 0}
-  recepie: []
