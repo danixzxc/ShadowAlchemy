@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
-  m_Name: water
+  m_Script: {fileID: 11500000, guid: 11787fdf0c749fb47a65ba5317b5d11f, type: 3}
+  m_Name: MiddleFinger
   m_EditorClassIdentifier: 
-  name: water
-  id: 2
+  type: 0
   sprite: {fileID: 0}
+  correspondingInput: 

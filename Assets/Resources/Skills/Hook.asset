@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
-  m_Name: steam
+  m_Name: Hook
   m_EditorClassIdentifier: 
-  name: steam
-  id: 3
-  sprite: {fileID: 0}
-  recipes:
-  - container:
-    - water
-    - fire
+  name: hook
+  id: 
+  combination: 010000000000000002000000
