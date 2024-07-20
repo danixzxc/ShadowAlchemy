@@ -19,7 +19,8 @@ public class PlayerAim : PlayerInput
 
     void Update()
     {
-        if (currentControlScheme == "KeyboardMouse"){
+        if (currentControlScheme == "KeyboardMouse")
+        {
             mouse = Mouse.current;
             Assert.IsNotNull(mouse); // IF MOUSE ISNT FOUND THEN SOMETHING FUCKED UP
             Vector3 mousePos = mouse.position.ReadValue();   
@@ -28,16 +29,12 @@ public class PlayerAim : PlayerInput
             direction = (Worldpos - transform.position);
             
         }
-        else if (currentControlScheme == "Gamepad"){
+        else if (currentControlScheme == "Gamepad")
+        {
             gamepad = Gamepad.current;
             Assert.IsNotNull(gamepad); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
             direction = gamepad.rightStick.ReadValue();
-        }
-        
+        }        
         DirectionUpdate?.Invoke(direction);
-
-        //Debug.Log(currentControlScheme);
-        //Debug.Log(direction);
-        //cursor.transform.position = new Vector3(transform.position.x + direction.x, transform.position.y + direction.y, transform.position.z);
     }
 }

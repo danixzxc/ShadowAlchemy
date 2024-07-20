@@ -18,7 +18,7 @@ public class GesturesController : MonoBehaviour
     {
         for(int i = 0; i < _gestures.Length; i++)
         {
-            _gestures[i] = RecipeManager.Instance.GetGesture(2);
+            _gestures[i] = CombinationManager.Instance.GetGesture(2);
         }
             OnGesturesChanged.Invoke(_gestures);
     }
@@ -27,7 +27,7 @@ public class GesturesController : MonoBehaviour
         if(context.performed)
         {
         Debug.Log("FirstGestureAdded");
-            _gestures[_gestureIndex] = RecipeManager.Instance.GetGesture(0);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(0);
             _gestureIndex++;
             if (_gestureIndex == 3)
                 _gestureIndex -= 3;
@@ -39,7 +39,7 @@ public class GesturesController : MonoBehaviour
         if (context.performed)
         {
         Debug.Log("SecondGestureAdded");
-            _gestures[_gestureIndex] = RecipeManager.Instance.GetGesture(1);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(1);
             _gestureIndex++;
             if (_gestureIndex == 3)
                 _gestureIndex -= 3;
@@ -51,7 +51,7 @@ public class GesturesController : MonoBehaviour
         if (context.performed)
         {
         Debug.Log("ThirdGestureAdded");
-            _gestures[_gestureIndex] = RecipeManager.Instance.GetGesture(3);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(3);
             _gestureIndex++;
             if (_gestureIndex == 3)
                 _gestureIndex -= 3;
@@ -68,7 +68,7 @@ public class GesturesController : MonoBehaviour
             {
                 temp[i] = _gestures[i].type;
             }
-            var skill = RecipeManager.Instance.CraftItem(temp);
+            var skill = CombinationManager.Instance.CraftItem(temp);
             if (skill != null)
             {
                 Debug.Log(skill.name);
