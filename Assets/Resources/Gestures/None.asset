@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11787fdf0c749fb47a65ba5317b5d11f, type: 3}
-  m_Name: Pinky
+  m_Name: None
   m_EditorClassIdentifier: 
-  type: 2
-  sprite: {fileID: -23529688, guid: 43fbe4e3eac925d4b90d859e57e3ea4e, type: 3}
+  type: 1
+  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   correspondingInput: 

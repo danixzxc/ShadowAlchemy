@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fist
   m_EditorClassIdentifier: 
   type: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 1376585970, guid: 43fbe4e3eac925d4b90d859e57e3ea4e, type: 3}
   correspondingInput: 

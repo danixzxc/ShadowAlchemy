@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using TreeEditor;
 using Unity.VisualScripting;
 using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Skill", order = 1)]
@@ -104,6 +103,7 @@ public class Skill : ScriptableObject
    
     public string name;
     public string id;
+    public Sprite sprite;
     public Type[] combination = new Type[3];
     
     
