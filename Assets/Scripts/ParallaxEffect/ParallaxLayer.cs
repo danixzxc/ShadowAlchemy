@@ -1,16 +1,34 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
 public class ParallaxLayer : MonoBehaviour
 {
     public float parallaxFactor;
+    private float _startPosition;
 
-    public void Move(float delta)
+    private GameObject _camera;
+
+    private float _length;
+
+    private void Start()
     {
-        Vector3 newPos = transform.localPosition;
-        newPos.x -= delta * parallaxFactor;
+        _startPosition = transform.position.x;
+        _camera = FindObjectOfType<Camera>().gameObject;
+        _length = GetComponent<SpriteRenderer>().bounds.size.x;
 
-        transform.localPosition = newPos;
+    }
+
+    private void FixedUpdate()
+    {
+        float distance = _camera.transform.position.x * parallaxFactor;
+        float movement = _camera.transform.position.x * (1 - parallaxFactor);
+        
+        transform.position = new Vector3(_startPosition + distance, transform.position.y, transform.position.z);
+
+        if(movement > _startPosition + _length)
+        {
+            _startPosition += _length;
+        }
     }
 
 }

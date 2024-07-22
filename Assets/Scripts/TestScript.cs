@@ -6,6 +6,6 @@ public class TestScript : MonoBehaviour
 {
     private void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime);
+        transform.Translate(Vector3.right * 3* Time.deltaTime);
     }
 }
