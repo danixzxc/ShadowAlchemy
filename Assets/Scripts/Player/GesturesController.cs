@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class GesturesController : MonoBehaviour
 {
@@ -14,66 +9,108 @@ public class GesturesController : MonoBehaviour
     public UnityEvent<Gesture[]> OnGesturesChanged;
     public UnityEvent<Skill> OnSkillChanged;
 
+    // 0 fist 1 middlefinger 2 none 3 pinky
+
+    private void Awake()
+    {
+        OnGesturesChanged.AddListener(CreateSkill);
+    }
+
     private void Start()
     {
-        for(int i = 0; i < _gestures.Length; i++)
+        for (int i = 0; i < _gestures.Length; i++)
         {
-            _gestures[i] = CombinationManager.Instance.GetGesture(2);
+            _gestures[i] = CombinationManager.Instance.GetGesture((int)Type.none);
         }
-            OnGesturesChanged.Invoke(_gestures);
+        OnGesturesChanged.Invoke(_gestures);
     }
-    public void AddFirstGesture(InputAction.CallbackContext context)
+
+    private int FindSlotByType(Type type)
     {
-        if(context.performed)
+        for (int i = 0; i < _gestures.Length; i++)
         {
-        Debug.Log("FirstGestureAdded");
-            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(0);
-            _gestureIndex++;
-            if (_gestureIndex == 3)
-                _gestureIndex -= 3;
-            OnGesturesChanged.Invoke(_gestures);
+            if (_gestures[i].type == type)
+                return i;
         }
+        return -1;
     }
-    public void AddSecondGesture(InputAction.CallbackContext context)
+
+    private void AddGesture(int gestureNumber)
     {
-        if (context.performed)
+        _gestureIndex = FindSlotByType(Type.none);
+        if (_gestureIndex != -1)
         {
-        Debug.Log("SecondGestureAdded");
-            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(1);
-            _gestureIndex++;
-            if (_gestureIndex == 3)
-                _gestureIndex -= 3;
-            OnGesturesChanged.Invoke(_gestures);
-        }
-    }
-    public void AddThirdGesture(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-        Debug.Log("ThirdGestureAdded");
-            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(3);
-            _gestureIndex++;
-            if (_gestureIndex == 3)
-                _gestureIndex -= 3;
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(gestureNumber);
             OnGesturesChanged.Invoke(_gestures);
         }
     }
 
-    public void CastSkill(InputAction.CallbackContext context)
+    private void DeleteGesture(Type type)
     {
-        if (context.performed)
+        _gestureIndex = FindSlotByType(type);
+        _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(2);
+
+        //сместить жесты влево
+        for (_gestureIndex++; _gestureIndex < _gestures.Length; _gestureIndex++)
         {
-            Type[] temp = new Type[3];
-            for (int i = 0; i < temp.Length; i++)
-            {
-                temp[i] = _gestures[i].type;
-            }
-            var skill = CombinationManager.Instance.CraftItem(temp);
-            if (skill != null)
-            {
-                Debug.Log(skill.name);
-                OnSkillChanged.Invoke(skill);
-            }
+            _gestures[_gestureIndex - 1] = CombinationManager.Instance.GetGesture((int)_gestures[_gestureIndex].type);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(2);
         }
+        OnGesturesChanged.Invoke(_gestures);
+    }
+
+    public void AddFirstGesture(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AddGesture(0);
+        }
+        if (context.canceled)
+        {
+            DeleteGesture(Type.fist);
+        }
+    }
+
+    public void AddSecondGesture(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AddGesture(1);
+        }
+        if (context.canceled)
+        {
+            DeleteGesture(Type.middleFinger);
+        }
+    }
+    public void AddThirdGesture(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AddGesture(3);
+        }
+        if (context.canceled)
+        {
+            DeleteGesture(Type.pinky);
+        }
+    }
+
+    public void CreateSkill(Gesture[] gestures)
+    {
+        Type[] temp = new Type[3];
+        for (int i = 0; i < temp.Length; i++)
+        {
+            temp[i] = gestures[i].type;
+        }
+        var skill = CombinationManager.Instance.CombineSkill(temp);
+        if (skill != null)
+        {
+            Debug.Log(skill.name);
+            OnSkillChanged.Invoke(skill);
+        }
+    }
+
+    public void CastSkill()
+    {
+        Debug.Log("Casting skill");
     }
 }

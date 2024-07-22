@@ -15,4 +15,4 @@ MonoBehaviour:
   name: hook
   id: 
   sprite: {fileID: 21300000, guid: 152261d73f8f4784bb4fa4a2cd9fa8a3, type: 3}
-  combination: 010000000000000002000000
+  combination: 000000000100000003000000
