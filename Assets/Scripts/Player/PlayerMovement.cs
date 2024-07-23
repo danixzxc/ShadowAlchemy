@@ -2,30 +2,43 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector]
+    public new Rigidbody2D rigidbody;
+
     [SerializeField]
     private float _maxHorizontalVelocity;
 
-    public MaxHorizontalVelocity
+    public float MaxHorizontalVelocity
     {
-        get { _maxHorizontalVelocity; }
+        get
+        {
+            return _maxHorizontalVelocity;
+        }
     }
 
     [SerializeField]
     private float _runningAcceleration;
 
-    public RunningAcceleration
+    public float RunningAcceleration
     {
-        get { _runningAcceleration; }
+        get
+        {
+            return _runningAcceleration;
+        }
     }
-    
+
     private HorizontalMovementState currentHorizontalMovementState;
     private VerticalMovementState currentVerticalMovementState;
-    
+
     // private SomeVerticalMovementState = new SomeVerticalMovementState();
+    public RunningState runningState = new RunningState();
+    public IdleState idleState = new IdleState();
     // template on how to add states here
 
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
+        currentHorizontalMovementState = idleState;
         // currentHorizontalMovementState = ... Some starting state
         // currentVerticalMovementState = ... Some starting state
     }
@@ -40,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         currentVerticalMovementState.OnCollisionEnter(this, collision);
         currentHorizontalMovementState.OnCollisionEnter(this, collision);
-        
+
     }
 
 
@@ -57,22 +70,25 @@ public class PlayerMovement : MonoBehaviour
         currentHorizontalMovementState = state;
         currentHorizontalMovementState.EnterState(this);
     }
+
 }
 
-namespace Movement{
+public class MovementState
+{
+    public virtual void EnterState(PlayerMovement playerMovement){}
+    public virtual void ExitState(PlayerMovement playerMovement){}
+    public virtual void FixedUpdate(PlayerMovement playerMovement){}
+    public virtual void OnCollisionEnter(PlayerMovement playerMovement, Collision collision){}
+   // public virtual void Input(PlayerMovement playerMovement, Event event);
+}
 
-    public abstract class MovementState{
-        public abstract void EnterState(PlayerMovement playerMovement);
-        public abstract void ExitState(PlayerMovement playerMovement);
-        public abstract void FixedUpdate(PlayerMovement playerMovement);
-        public abstract void OnCollisionEnter(PlayerMovement playerMovement, Collision collision);
-    }
+public class HorizontalMovementState : MovementState
+{
 
-    public abstract class HorizontalMovementState : MovementState{
-        
-    }
+}
 
-    public abstract class VerticalMovementState : MovementState{
-        
-    }
+public class VerticalMovementState : MovementState
+{
+
+
 }
