@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,8 +28,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    public InputActionAsset playerInput;
+
     private HorizontalMovementState currentHorizontalMovementState;
-    private VerticalMovementState currentVerticalMovementState;
+    private VerticalMovementState currentVerticalMovementState = new VerticalMovementState();
 
     // private SomeVerticalMovementState = new SomeVerticalMovementState();
     public RunningState runningState = new RunningState();
@@ -38,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        currentHorizontalMovementState = idleState;
+        ChangeHorizontalState(idleState);
         // currentHorizontalMovementState = ... Some starting state
         // currentVerticalMovementState = ... Some starting state
     }
@@ -59,14 +63,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeVerticalState(VerticalMovementState state)
     {
-        currentVerticalMovementState.ExitState(this);
+        currentVerticalMovementState?.ExitState(this);
         currentVerticalMovementState = state;
         currentVerticalMovementState.EnterState(this);
     }
 
     public void ChangeHorizontalState(HorizontalMovementState state)
     {
-        currentHorizontalMovementState.ExitState(this);
+        currentHorizontalMovementState?.ExitState(this);
         currentHorizontalMovementState = state;
         currentHorizontalMovementState.EnterState(this);
     }
@@ -79,7 +83,8 @@ public class MovementState
     public virtual void ExitState(PlayerMovement playerMovement){}
     public virtual void FixedUpdate(PlayerMovement playerMovement){}
     public virtual void OnCollisionEnter(PlayerMovement playerMovement, Collision collision){}
-   // public virtual void Input(PlayerMovement playerMovement, Event event);
+   
+    //public virtual void Event(PlayerMovement playerMovement, Event event);
 }
 
 public class HorizontalMovementState : MovementState
