@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //DEBUG TODO remove when sprites are added
-    public DebugPlayerState debugPlayerState;
 
     [HideInInspector]
     public new Rigidbody2D rigidbody;
+    [HideInInspector]
+    public Animator animator;
 
     [SerializeField]
     private PlayerCharacteristics _playerCharacteristics;
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         ChangeHorizontalState(idleState);
         ChangeVerticalState(fallingState);
         

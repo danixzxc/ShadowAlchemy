@@ -9,9 +9,6 @@ public class OnGroundState : VerticalMovementState
         _playerMovement = playerMovement;
         playerMovement.playerInput.FindActionMap("Player").
             FindAction("Jump").performed += ToJump;
-
-        // DEBUG CODE Remove after added sprites TODO
-        playerMovement.debugPlayerState.ChangeUpperColor(Color.white);
         
         if (playerMovement.IsInHorizontalState(playerMovement.airborneHorizontalState)){
             playerMovement.ChangeHorizontalState(playerMovement.runningState);
@@ -46,8 +43,6 @@ public class JumpingState : VerticalMovementState
     {
         SetVelocityY(playerMovement, playerMovement.JumpVelocity); 
 
-        // DEBUG CODE Remove after added sprites TODO
-        playerMovement.debugPlayerState.ChangeUpperColor(Color.cyan);
     }
 
     public override void FixedUpdate(PlayerMovement playerMovement)
@@ -68,11 +63,5 @@ public class FallingState : VerticalMovementState
         if (playerMovement.IsGrounded()){
             playerMovement.ChangeVerticalState(playerMovement.onGroundState);
         }
-    }
-    
-    public override void EnterState(PlayerMovement playerMovement)
-    {
-        // DEBUG CODE Remove after added sprites TODO
-        playerMovement.debugPlayerState.ChangeUpperColor(Color.yellow);
     }
 }
