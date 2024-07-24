@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerLightSensor : MonoBehaviour
 {
-    [Header("In Shadow")]
     [SerializeField]
+    private PlayerCharacteristics _playerCharacteristics;
     private float gainPerSecond;
-    [Header("In Light")]
-    [SerializeField]
     private float losePerSecondPerLight;
 
     private PlayerMana _playerMana;
@@ -17,6 +15,8 @@ public class PlayerLightSensor : MonoBehaviour
 
     void Start()
     {
+        gainPerSecond = _playerCharacteristics.gainPerSecond;
+        losePerSecondPerLight = _playerCharacteristics.losePerSecondPerLight;
         _playerMana = GetComponent<PlayerMana>();
         lightsCounter = 0;
     }

@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class PlayerMana : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerCharacteristics _playerCharacteristics;
     public UnityEvent<int> MaxManaChanged;
     public UnityEvent<float> ManaChanged;
     public UnityEvent OutOfMana;
     
-
-    [SerializeField]
-    private int _max_mana = 1;
+    private int _max_mana;
 
     
     public int MaxMana
@@ -40,7 +40,7 @@ public class PlayerMana : MonoBehaviour
     }
 
     void Start(){
-        MaxManaChanged?.Invoke(_max_mana);
+        MaxMana = _playerCharacteristics.startingManaSegments;
         Mana = MaxMana;
     }
 
