@@ -44,3 +44,11 @@ public class IdleState : HorizontalMovementState
 
 }
 
+public class AirborneHorizontalState : HorizontalMovementState
+{
+    public override void EnterState(PlayerMovement playerMovement)
+    {      
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeLowerColor(Color.yellow);
+    }
+}

@@ -12,11 +12,19 @@ public class OnGroundState : VerticalMovementState
 
         // DEBUG CODE Remove after added sprites TODO
         playerMovement.debugPlayerState.ChangeUpperColor(Color.white);
+        
+        if (playerMovement.IsInHorizontalState(playerMovement.airborneHorizontalState)){
+            playerMovement.ChangeHorizontalState(playerMovement.runningState);
+        }
     }
     public override void ExitState(PlayerMovement playerMovement)
     {
         playerMovement.playerInput.FindActionMap("Player").
            FindAction("Jump").performed -= ToJump;
+        
+        if (playerMovement.IsInHorizontalState(playerMovement.runningState)){
+            playerMovement.ChangeHorizontalState(playerMovement.airborneHorizontalState);
+        }
     }
     private void ToJump(InputAction.CallbackContext callbackContext)
     {

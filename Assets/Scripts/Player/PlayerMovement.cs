@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // Horizontal States:
     public RunningState runningState = new RunningState();
     public IdleState idleState = new IdleState();
+    public AirborneHorizontalState airborneHorizontalState = new AirborneHorizontalState();
     // Vertical States:
     public OnGroundState onGroundState = new OnGroundState();
     public JumpingState jumpingState = new JumpingState();
@@ -71,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
     {
         currentVerticalMovementState.FixedUpdate(this);
         currentHorizontalMovementState.FixedUpdate(this);
-        Debug.Log(currentVerticalMovementState);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -94,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
         currentHorizontalMovementState.ExitState(this);
         currentHorizontalMovementState = state;
         currentHorizontalMovementState.EnterState(this);
+    }
+
+    public bool IsInHorizontalState(HorizontalMovementState state){
+        return currentHorizontalMovementState == state;
+    }
+
+    public bool IsInVerticalState(VerticalMovementState state){
+        return currentVerticalMovementState == state;
     }
 
     public bool IsGrounded() {
