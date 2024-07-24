@@ -9,6 +9,9 @@ public class OnGroundState : VerticalMovementState
         _playerMovement = playerMovement;
         playerMovement.playerInput.FindActionMap("Player").
             FindAction("Jump").performed += ToJump;
+
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeUpperColor(Color.white);
     }
     public override void ExitState(PlayerMovement playerMovement)
     {
@@ -26,6 +29,7 @@ public class OnGroundState : VerticalMovementState
             playerMovement.ChangeVerticalState(playerMovement.fallingState);
         }
     }
+
 }
 
 public class JumpingState : VerticalMovementState
@@ -33,6 +37,9 @@ public class JumpingState : VerticalMovementState
     public override void EnterState(PlayerMovement playerMovement)
     {
         SetVelocityY(playerMovement, playerMovement.JumpVelocity); 
+
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeUpperColor(Color.cyan);
     }
 
     public override void FixedUpdate(PlayerMovement playerMovement)
@@ -55,4 +62,9 @@ public class FallingState : VerticalMovementState
         }
     }
     
+    public override void EnterState(PlayerMovement playerMovement)
+    {
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeUpperColor(Color.yellow);
+    }
 }

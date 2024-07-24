@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //DEBUG TODO remove when sprites are added
+    public DebugPlayerState debugPlayerState;
+
     [HideInInspector]
     public new Rigidbody2D rigidbody;
 

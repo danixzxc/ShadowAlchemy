@@ -10,6 +10,12 @@ public class RunningState : HorizontalMovementState
             AddVelocityX(playerMovement, playerMovement.RunningAcceleration * Time.fixedDeltaTime);
         }
     }
+
+    public override void EnterState(PlayerMovement playerMovement)
+    {      
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeLowerColor(Color.white);
+    }
 }
 
 public class IdleState : HorizontalMovementState
@@ -21,6 +27,9 @@ public class IdleState : HorizontalMovementState
         _playerMovement = playerMovement;
         playerMovement.playerInput.FindActionMap("Player").
             FindAction("StartGame").performed += StartRunning;
+        
+        // DEBUG CODE Remove after added sprites TODO
+        playerMovement.debugPlayerState.ChangeLowerColor(Color.gray);
     }
 
     public override void ExitState(PlayerMovement playerMovement)
