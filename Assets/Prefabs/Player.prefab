@@ -422,9 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugPlayerState: {fileID: 5820374756125028130}
   rigidbody: {fileID: 0}
-  _maxHorizontalVelocity: 10
-  _runningAcceleration: 2
-  _jumpVelocity: 10
+  _playerCharacteristics: {fileID: 11400000, guid: fd323f686d2fef546829d91923748da8, type: 2}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64

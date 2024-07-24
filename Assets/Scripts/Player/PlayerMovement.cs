@@ -10,34 +10,37 @@ public class PlayerMovement : MonoBehaviour
     public new Rigidbody2D rigidbody;
 
     [SerializeField]
-    private float _maxHorizontalVelocity;
+    private PlayerCharacteristics _playerCharacteristics;
 
+    public float StartHorizontalVelocity
+    {
+        get
+        {
+            return _playerCharacteristics.startHorizontalVelocity;
+        }
+    }
     public float MaxHorizontalVelocity
     {
         get
         {
-            return _maxHorizontalVelocity;
+            return _playerCharacteristics.maxHorizontalVelocity;
         }
     }
 
-    [SerializeField]
-    private float _runningAcceleration;
 
     public float RunningAcceleration
     {
         get
         {
-            return _runningAcceleration;
+            return _playerCharacteristics.runningAcceleration;
         }
     }
 
-    [SerializeField]
-    private float _jumpVelocity;
     public float JumpVelocity
     {
         get
         {
-            return _jumpVelocity;
+            return _playerCharacteristics.jumpVelocity;
         }
     }
 

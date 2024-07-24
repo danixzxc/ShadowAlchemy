@@ -36,6 +36,7 @@ public class IdleState : HorizontalMovementState
     {
         playerMovement.playerInput.FindActionMap("Player").
            FindAction("StartGame").performed -= StartRunning;
+        SetVelocityX(playerMovement, playerMovement.StartHorizontalVelocity);
     }
     private void StartRunning(InputAction.CallbackContext callbackContext)
     {
