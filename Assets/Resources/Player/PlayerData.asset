@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fb151687f497347a7d91fcda54cf54, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  maxHorizontalVelocity: 0
-  runningAcceleration: 0
-  jumpVelocity: 0
+  startHorizontalVelocity: 5
+  maxHorizontalVelocity: 10
+  runningAcceleration: 1
+  jumpVelocity: 10
