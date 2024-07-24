@@ -16,6 +16,6 @@ public class PlayerCharacteristics : ScriptableObject
     public float gainPerSecond;
     [Header("In Light")]
     [SerializeField]
-    public float losePerSecondPerLight; 
+    public float losePerSecond; 
 
 }

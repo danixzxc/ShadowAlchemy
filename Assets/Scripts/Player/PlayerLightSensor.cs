@@ -7,7 +7,7 @@ public class PlayerLightSensor : MonoBehaviour
     [SerializeField]
     private PlayerCharacteristics _playerCharacteristics;
     private float gainPerSecond;
-    private float losePerSecondPerLight;
+    private float losePerSecond;
 
     private PlayerMana _playerMana;
 
@@ -16,7 +16,7 @@ public class PlayerLightSensor : MonoBehaviour
     void Start()
     {
         gainPerSecond = _playerCharacteristics.gainPerSecond;
-        losePerSecondPerLight = _playerCharacteristics.losePerSecondPerLight;
+        losePerSecond = _playerCharacteristics.losePerSecond;
         _playerMana = GetComponent<PlayerMana>();
         lightsCounter = 0;
     }
@@ -27,7 +27,7 @@ public class PlayerLightSensor : MonoBehaviour
             _playerMana.Mana += Time.deltaTime * gainPerSecond;
         }
         else {
-            _playerMana.Mana -= Time.deltaTime * losePerSecondPerLight * lightsCounter;
+            _playerMana.Mana -= Time.deltaTime * losePerSecond;
         }
     }
 

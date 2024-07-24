@@ -18,4 +18,4 @@ MonoBehaviour:
   jumpVelocity: 10
   startingManaSegments: 3
   gainPerSecond: 1
-  losePerSecondPerLight: 2
+  losePerSecond: 2
