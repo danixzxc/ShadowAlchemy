@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DebugScript : MonoBehaviour
+public class SingletonInitializer : MonoBehaviour
 {
     void Awake(){
         print(CombinationManager.Instance);
