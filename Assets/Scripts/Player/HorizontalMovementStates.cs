@@ -1,21 +1,21 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class RunningState : HorizontalMovementState
 {
     public override void FixedUpdate(PlayerMovement playerMovement)
     {
-       playerMovement.transform.Translate(Vector3.right * 3 * Time.deltaTime);
+       //playerMovement.transform.Translate(Vector3.right * 3 * Time.fixedDeltaTime);
+        if (GetVelocityX(playerMovement) <= playerMovement.MaxHorizontalVelocity){
+            AddVelocityX(playerMovement, playerMovement.RunningAcceleration * Time.fixedDeltaTime);
+        }
     }
 }
 
 public class IdleState : HorizontalMovementState
 {
 
-    private PlayerMovement _playerMovement;
+    private PlayerMovement _playerMovement; // TODO: Replace this with a better solution
     public override void EnterState(PlayerMovement playerMovement)
     {
         _playerMovement = playerMovement;
@@ -32,7 +32,6 @@ public class IdleState : HorizontalMovementState
     {
         _playerMovement.ChangeHorizontalState(_playerMovement.runningState);
     }
-
 
 }
 
