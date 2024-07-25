@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1961077921376651058}
   - component: {fileID: -9146199248452016499}
   - component: {fileID: 982103624741872966}
+  - component: {fileID: 4326685819603800183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -495,7 +496,19 @@ MonoBehaviour:
       m_Calls: []
   OutOfMana:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4326685819603800183}
+        m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
+        m_MethodName: InvokeDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1961077921376651058
 Animator:
   serializedVersion: 5
@@ -574,3 +587,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.99, y: 1.99}
   m_EdgeRadius: 0
+--- !u!114 &4326685819603800183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166237109921266165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821bb5206f0da18a3aa76053f732e53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
