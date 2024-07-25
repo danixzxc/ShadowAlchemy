@@ -73,7 +73,7 @@ public class ManaBar : MonoBehaviour
             GameObject newSegment = Instantiate(healthSegment);
             newSegment.transform.SetParent(this.transform);
         }
-        
+        ForceResize();
     }
 
     void Awake()
@@ -87,5 +87,11 @@ public class ManaBar : MonoBehaviour
     {
         UpdateSegmentCount();
         UpdateVisuals();
+    }
+
+    void ForceResize(){
+        for (int i = 1; i < transform.childCount; i++){
+            transform.GetChild(i).localScale = Vector3.one;
+        }
     }
 }
