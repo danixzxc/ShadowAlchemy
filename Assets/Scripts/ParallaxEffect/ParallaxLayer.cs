@@ -10,9 +10,7 @@ public class ParallaxLayer : MonoBehaviour
     private SpriteRenderer _childObjectSpriteRenderer;
 
     private float _startPosition;
-
     private GameObject _camera;
-
     private float _length;
 
     private void Start()
@@ -22,7 +20,7 @@ public class ParallaxLayer : MonoBehaviour
         _parentObjectSpriteRenderer = GetComponent<SpriteRenderer>();
         _childObjectSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         _length = _parentObjectSpriteRenderer.bounds.size.x;
-
+        
         _childObjectSpriteRenderer.sprite = _data.sprites[Random.Range(0, _data.sprites.Count)];
     }
 
