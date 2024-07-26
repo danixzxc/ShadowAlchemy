@@ -7039,6 +7039,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -38335557
       objectReference: {fileID: 0}
+    - target: {fileID: 7411311593715432991, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7788763254611940668, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: m_SortingLayer
       value: 2

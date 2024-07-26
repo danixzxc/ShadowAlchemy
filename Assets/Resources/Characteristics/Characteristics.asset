@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31c8aee1bf283647bf419bf213f65a8, type: 3}
   m_Name: Characteristics
   m_EditorClassIdentifier: 
-  dashVelocity: 0
-  dashDistance: 0
-  finalVelocityPercent: 0
+  dashVelocity: 15
+  dashDistance: 5
+  finalVelocityPercent: 100
