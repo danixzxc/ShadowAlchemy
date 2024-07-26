@@ -25,7 +25,11 @@ public class CombinationManager
                 _instance._skillDatas = Resources.LoadAll("Skills", typeof(SkillData)).
                                     Cast<SkillData>().ToArray();
                 _instance._skillsCharacteristics = Resources.Load("Characteristics/Characteristics", typeof(SkillsCharacteristics)) as SkillsCharacteristics;
-                _instance._skills = new Skill[]{new DashSkill()}; // <- Заглушка 
+                _instance._skills = new Skill[]
+                {
+                    new DashSkill(),
+                    new BackstepSkill()
+                }; 
             }
             return _instance;
         }
