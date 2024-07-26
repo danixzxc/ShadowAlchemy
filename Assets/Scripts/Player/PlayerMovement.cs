@@ -36,14 +36,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public float JumpVelocity
-    {
-        get
-        {
-            return _playerCharacteristics.jumpVelocity;
-        }
-    }
-
     [SerializeField]
     private LayerMask _groundLayer;
 
@@ -111,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded() {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1.0f;
+        float distance = 0.33f;
         
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, _groundLayer);
         if (hit.collider != null) {

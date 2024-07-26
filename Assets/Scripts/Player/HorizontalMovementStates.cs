@@ -14,7 +14,11 @@ public class RunningState : HorizontalMovementState
     public override void EnterState(PlayerMovement playerMovement)
     {      
         playerMovement.animator.SetTrigger("ToRun");
+    }
 
+    public override void ExitState(PlayerMovement playerMovement)
+    {      
+        playerMovement.animator.ResetTrigger("ToRun");
     }
 }
 

@@ -7,7 +7,7 @@ public class PlayerCharacteristics : ScriptableObject
     public float startHorizontalVelocity;
     public float maxHorizontalVelocity;
     public float runningAcceleration;
-    public float jumpVelocity;
+    //public float jumpVelocity;
     [Header("Mana")]
     [Tooltip("Amount of mana player with start with. Is measured in segments, so its an integer.")]
     public int startingManaSegments;

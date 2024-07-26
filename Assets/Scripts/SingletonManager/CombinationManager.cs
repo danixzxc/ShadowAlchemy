@@ -28,7 +28,8 @@ public class CombinationManager
                 _instance._skills = new Skill[]
                 {
                     new DashSkill(),
-                    new BackstepSkill()
+                    new BackstepSkill(),
+                    new JumpSkill()
                 }; 
             }
             return _instance;

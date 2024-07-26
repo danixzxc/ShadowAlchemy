@@ -3,35 +3,29 @@ using UnityEngine.InputSystem;
 
 public class OnGroundState : VerticalMovementState
 {
-    private PlayerMovement _playerMovement; // TODO: Replace this with a better solution
     public override void EnterState(PlayerMovement playerMovement)
-    {
-        _playerMovement = playerMovement;
-        playerMovement.playerInput.FindActionMap("Player").
-            FindAction("Jump").performed += ToJump;
-        
+    {        
         if (playerMovement.IsInHorizontalState(playerMovement.airborneHorizontalState)){
             playerMovement.ChangeHorizontalState(playerMovement.runningState);
         }
     }
     public override void ExitState(PlayerMovement playerMovement)
     {
-        playerMovement.playerInput.FindActionMap("Player").
-           FindAction("Jump").performed -= ToJump;
-        
         if (playerMovement.IsInHorizontalState(playerMovement.runningState)){
             playerMovement.ChangeHorizontalState(playerMovement.airborneHorizontalState);
         }
     }
-    private void ToJump(InputAction.CallbackContext callbackContext)
-    {
-        _playerMovement.ChangeVerticalState(_playerMovement.jumpingState);
-    }
+
     public override void FixedUpdate(PlayerMovement playerMovement)
     {
         
         if (!playerMovement.IsGrounded()){
-            playerMovement.ChangeVerticalState(playerMovement.fallingState);
+            if (GetVelocityY(playerMovement) >= 0.0f){
+                playerMovement.ChangeVerticalState(playerMovement.fallingState);
+            }
+            else{
+                playerMovement.ChangeVerticalState(playerMovement.jumpingState);
+            }
         }
     }
 
@@ -41,7 +35,7 @@ public class JumpingState : VerticalMovementState
 {
     public override void EnterState(PlayerMovement playerMovement)
     {
-        SetVelocityY(playerMovement, playerMovement.JumpVelocity); 
+        //SetVelocityY(playerMovement, playerMovement.JumpVelocity); 
         playerMovement.animator.SetTrigger("ToJump");
     }
 
@@ -52,7 +46,10 @@ public class JumpingState : VerticalMovementState
             playerMovement.ChangeVerticalState(playerMovement.fallingState);
         }
     }
-
+    public override void ExitState(PlayerMovement playerMovement)
+    {      
+        playerMovement.animator.ResetTrigger("ToJump");
+    }
 }
 
 public class FallingState : VerticalMovementState
@@ -67,5 +64,9 @@ public class FallingState : VerticalMovementState
         if (playerMovement.IsGrounded()){
             playerMovement.ChangeVerticalState(playerMovement.onGroundState);
         }
+    }
+    public override void ExitState(PlayerMovement playerMovement)
+    {      
+        playerMovement.animator.ResetTrigger("ToFall");
     }
 }

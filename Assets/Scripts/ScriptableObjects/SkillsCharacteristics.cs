@@ -14,5 +14,11 @@ public class SkillsCharacteristics : ScriptableObject
     public float backstepVelocity;
     public float backstepDistance;
     public float backstepFinalVelocityPercent;
+    
+    [Space(10), Header("Jump")]
+    [Range(0.0f, 10.0f)]
+    public float jumpMultiplier = 1.0f;
+    [Range(0.0f, 1.0f)]
+    public float landingMultiplier = 1.0f;
 
 }
