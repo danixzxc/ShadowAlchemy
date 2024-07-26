@@ -29,7 +29,8 @@ public class CombinationManager
                 {
                     new DashSkill(),
                     new BackstepSkill(),
-                    new JumpSkill()
+                    new JumpSkill(),
+                    new WallrunSkill()
                 }; 
             }
             return _instance;

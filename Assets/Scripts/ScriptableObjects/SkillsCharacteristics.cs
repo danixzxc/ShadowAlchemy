@@ -21,4 +21,7 @@ public class SkillsCharacteristics : ScriptableObject
     [Range(0.0f, 1.0f)]
     public float landingMultiplier = 1.0f;
 
+    [Space(10), Header("Wallrun")]
+    public float wallrunFinalVelocityPercent;
+
 }

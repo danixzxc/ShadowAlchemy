@@ -8,7 +8,6 @@ public class BackstepSkill :  Skill
 
     private Rigidbody2D _rigidbody;
     private float _time;
-    private IEnumerator coroutine;
     public BackstepSkill()
     {
         data = CombinationManager.Instance.GetSkillData("backstep");

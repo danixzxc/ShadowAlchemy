@@ -21,5 +21,6 @@ MonoBehaviour:
   losePerSecond: 2
   maxUpperAngle: 45
   maxLowerAngle: 45
+  cursorDistanceFromPlayer: 3
   upperBodyHalfSensitivity: 0.6
   gamepadCursorMaxOffset: 3
