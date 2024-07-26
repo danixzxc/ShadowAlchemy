@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashVelocity: 20
   dashDistance: 10
-  dashFinalVelocityPercent: 0
-  backstepVelocity: 0
-  backstepDistance: 0
-  backstepFinalVelocityPercent: 0
-  jumpMultiplier: 1
-  landingMultiplier: 1
+  dashFinalVelocityPercent: 50
+  backstepVelocity: 10
+  backstepDistance: 5
+  backstepFinalVelocityPercent: 100
+  jumpMultiplier: 2
+  landingMultiplier: 0.5
+  wallrunFinalVelocityPercent: 50

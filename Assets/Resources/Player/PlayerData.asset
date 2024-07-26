@@ -15,7 +15,6 @@ MonoBehaviour:
   startHorizontalVelocity: 5
   maxHorizontalVelocity: 10
   runningAcceleration: 1
-  jumpVelocity: 10
   startingManaSegments: 3
   gainPerSecond: 1
   losePerSecond: 2
