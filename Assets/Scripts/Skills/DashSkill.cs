@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class DashSkill :  Skill
 {
-
-    [SerializeField]
-    private float _velocity;
-    [SerializeField]
-    private float _distance;
-    [SerializeField]
-    private float _finalVelocity;
+    private SkillsCharacteristics _characteristics;
 
     private Rigidbody2D _rigidbody;
     private float _time;
+    private IEnumerator coroutine;
     public DashSkill()
     {
-        //data = CombinationManager.Instance.
+        data = CombinationManager.Instance.GetSkillData("dash");
+        _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
+        //Debug.Log("I know characteristics" + _characteristics.dashVelocity);
     }
-    public override void castSkill(float direction, GameObject player)
+    public override void CastSkill(float direction, GameObject player)
     {
-        _time = _distance/_velocity;
-        Rigidbody2D rigidbody = player.GetComponent<Rigidbody2D>();
-        WaitForSkillEnd(direction);
+        Debug.Log("Skastoval");
+        _time = _characteristics.dashDistance / _characteristics.dashVelocity;
+        _rigidbody = player.GetComponent<Rigidbody2D>();
+        var coroutine = WaitForSkillEnd(direction);
+        player.GetComponent<PlayerMovement>().StartCoroutine(coroutine); // Evil MonoBehaviour Hack.
     }
 
     private IEnumerator WaitForSkillEnd(float direction)
@@ -30,11 +29,11 @@ public class DashSkill :  Skill
         float time = 0;
         while (time < _time)
         {
-            _rigidbody.velocity = AngleToVec2(direction) * _velocity;
+            _rigidbody.velocity = AngleToVec2(direction) * _characteristics.dashVelocity;
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }
-        _rigidbody.velocity = _rigidbody.velocity / _finalVelocity;
+        _rigidbody.velocity = _rigidbody.velocity / _characteristics.finalVelocityPercent * 100;
     }
 
 }

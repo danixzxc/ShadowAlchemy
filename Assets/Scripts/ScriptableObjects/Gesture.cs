@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum Type
 {
-    fist,
-    middleFinger,
+    e,
     none,
-    pinky
+    q,
+    w
 }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Gesture", order = 2)]

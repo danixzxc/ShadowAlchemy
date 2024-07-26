@@ -7,6 +7,7 @@ public class CombinationManager
     private Gesture[] _gestures;
     private SkillData[] _skillDatas;
     private Skill[] _skills;
+    private SkillsCharacteristics _skillsCharacteristics;
 
     public Dictionary<Type, Gesture> gestures;
 
@@ -23,6 +24,8 @@ public class CombinationManager
                                     Cast<Gesture>().ToArray();
                 _instance._skillDatas = Resources.LoadAll("Skills", typeof(SkillData)).
                                     Cast<SkillData>().ToArray();
+                _instance._skillsCharacteristics = Resources.Load("Characteristics/Characteristics", typeof(SkillsCharacteristics)) as SkillsCharacteristics;
+                _instance._skills = new Skill[]{new DashSkill()}; // <- Заглушка 
             }
             return _instance;
         }
@@ -35,12 +38,17 @@ public class CombinationManager
                return item;
             }
         }
-        return null;
+        return new Skill();
     }
 
     public Gesture GetGesture(int index)
     {
         return _gestures[index];
+    }
+
+    public SkillsCharacteristics GetSkillsCharacteristics()
+    {
+        return _skillsCharacteristics;
     }
 
     public SkillData GetSkillData(string name)

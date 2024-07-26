@@ -12,6 +12,8 @@ public class GesturesController : MonoBehaviour
     public UnityEvent<Gesture[]> OnGesturesChanged;
     public UnityEvent<SkillData> OnSkillChanged;
 
+    private Skill _currentSkill;
+
     private float _angle = 0.0f;
     public float Angle{
         get{return _angle;}
@@ -19,9 +21,6 @@ public class GesturesController : MonoBehaviour
             _angle = value;
         }
     }
-    
-
-    // 0 fist 1 middlefinger 2 none 3 pinky
 
     private void Awake()
     {
@@ -34,7 +33,8 @@ public class GesturesController : MonoBehaviour
         {
             _gestures[i] = CombinationManager.Instance.GetGesture((int)Type.none);
         }
-        OnGesturesChanged.Invoke(_gestures);
+        OnGesturesChanged?.Invoke(_gestures);
+        _currentSkill = new Skill();
     }
 
     private int FindSlotByType(Type type)
@@ -60,13 +60,12 @@ public class GesturesController : MonoBehaviour
     private void DeleteGesture(Type type)
     {
         _gestureIndex = FindSlotByType(type);
-        _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(2);
+        _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture((int)Type.none);
 
-        //�������� ����� �����
         for (_gestureIndex++; _gestureIndex < _gestures.Length; _gestureIndex++)
         {
             _gestures[_gestureIndex - 1] = CombinationManager.Instance.GetGesture((int)_gestures[_gestureIndex].type);
-            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(2);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture((int)Type.none);
         }
         OnGesturesChanged.Invoke(_gestures);
     }
@@ -75,11 +74,11 @@ public class GesturesController : MonoBehaviour
     {
         if (context.started)
         {
-            AddGesture(0);
+            AddGesture((int)Type.q);
         }
         if (context.canceled)
         {
-            DeleteGesture(Type.fist);
+            DeleteGesture(Type.q);
         }
     }
 
@@ -87,22 +86,22 @@ public class GesturesController : MonoBehaviour
     {
         if (context.started)
         {
-            AddGesture(1);
+            AddGesture((int)Type.w);
         }
         if (context.canceled)
         {
-            DeleteGesture(Type.middleFinger);
+            DeleteGesture(Type.w);
         }
     }
     public void AddThirdGesture(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            AddGesture(3);
+            AddGesture((int)Type.e);
         }
         if (context.canceled)
         {
-            DeleteGesture(Type.pinky);
+            DeleteGesture(Type.e);
         }
     }
 
@@ -113,16 +112,19 @@ public class GesturesController : MonoBehaviour
         {
             temp[i] = gestures[i].type;
         }
-        var skill = CombinationManager.Instance.CombineSkill(temp);
-        if (skill != null)
+        _currentSkill = CombinationManager.Instance.CombineSkill(temp);
+        if (_currentSkill != null)
         {
-            Debug.Log(skill.name);
-            OnSkillChanged.Invoke(skill);
+            Debug.Log(_currentSkill.data.name);
+            OnSkillChanged.Invoke(_currentSkill.data);
         }
     }
 
-    public void CastSkill()
+    public void CastSkill(InputAction.CallbackContext context)
     {
-        Debug.Log("Casting skill in the angle of " + _angle);
+        if (context.performed)
+        {
+              _currentSkill.CastSkill(_angle, this.gameObject);
+        }
     }
 }

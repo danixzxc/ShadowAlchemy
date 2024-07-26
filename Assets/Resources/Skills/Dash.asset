@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11787fdf0c749fb47a65ba5317b5d11f, type: 3}
-  m_Name: Pinky
+  m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
+  m_Name: Dash
   m_EditorClassIdentifier: 
-  type: 3
-  sprite: {fileID: -23529688, guid: 43fbe4e3eac925d4b90d859e57e3ea4e, type: 3}
-  correspondingInput: 
+  name: dash
+  isDirectional: 0
+  sprite: {fileID: -908169745, guid: baae4e24566cd6e40a33c26003fdc2d7, type: 3}
+  combination: 030000000000000001000000
