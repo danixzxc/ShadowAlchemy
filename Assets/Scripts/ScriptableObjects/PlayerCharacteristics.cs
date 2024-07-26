@@ -17,6 +17,12 @@ public class PlayerCharacteristics : ScriptableObject
     [Header("In Light")]
     [SerializeField]
     public float losePerSecond; 
+    [Header("Aiming")]
+    public float maxUpperAngle;
+    public float maxLowerAngle;
+    [Range(0.0f, 1.0f)]
+    public float upperBodyHalfSensitivity = 1.0f;
+    
     [Header("Gamepad")]
     public float gamepadCursorMaxOffset;
 

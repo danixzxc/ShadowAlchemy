@@ -46,7 +46,6 @@ public class PlayerAim : MonoBehaviour
         {
             gamepad = Gamepad.current;
             Assert.IsNotNull(gamepad); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
-            Assert.IsNotNull(gamepad.rightStick); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
             direction = gamepad.rightStick.ReadValue() * _playerCharacteristics.gamepadCursorMaxOffset;
         }        
         DirectionUpdate?.Invoke(direction.normalized);
