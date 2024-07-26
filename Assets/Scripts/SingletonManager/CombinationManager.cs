@@ -5,7 +5,8 @@ using UnityEngine;
 public class CombinationManager
 {
     private Gesture[] _gestures;
-    private SkillData[] _skills;
+    private SkillData[] _skillDatas;
+    private Skill[] _skills;
 
     public Dictionary<Type, Gesture> gestures;
 
@@ -20,7 +21,7 @@ public class CombinationManager
                 _instance = new CombinationManager();
                 _instance._gestures = Resources.LoadAll("Gestures", typeof(Gesture)).
                                     Cast<Gesture>().ToArray();
-                _instance._skills = Resources.LoadAll("Skills", typeof(SkillData)).
+                _instance._skillDatas = Resources.LoadAll("Skills", typeof(SkillData)).
                                     Cast<SkillData>().ToArray();
             }
             return _instance;
@@ -28,7 +29,7 @@ public class CombinationManager
     }
     public SkillData CombineSkill(Type[] combination)
     {
-        foreach (var item in _skills)
+        foreach (var item in _skillDatas)
         {
             if(item.isValid(combination)){
                return item;
@@ -44,11 +45,11 @@ public class CombinationManager
 
     public SkillData GetSkill(string name)
     {
-        foreach(var item in _skills)
+        foreach(var item in _skillDatas)
         {
             if(item.name == name)
                 return item;
         }
-        return _skills[1]; // item for none
+        return _skillDatas[1]; // item for none
     }
 }
