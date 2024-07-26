@@ -27,15 +27,15 @@ public class CombinationManager
             return _instance;
         }
     }
-    public SkillData CombineSkill(Type[] combination)
+    public Skill CombineSkill(Type[] combination)
     {
-        foreach (var item in _skillDatas)
+        foreach (var item in _skills)
         {
-            if(item.isValid(combination)){
+            if(item.data.isValid(combination)){
                return item;
             }
         }
-        return GetSkill("None");
+        return null;
     }
 
     public Gesture GetGesture(int index)
@@ -43,7 +43,7 @@ public class CombinationManager
         return _gestures[index];
     }
 
-    public SkillData GetSkill(string name)
+    public SkillData GetSkillData(string name)
     {
         foreach(var item in _skillDatas)
         {
