@@ -42,7 +42,7 @@ public class JumpingState : VerticalMovementState
     public override void EnterState(PlayerMovement playerMovement)
     {
         SetVelocityY(playerMovement, playerMovement.JumpVelocity); 
-
+        playerMovement.animator.SetTrigger("ToJump");
     }
 
     public override void FixedUpdate(PlayerMovement playerMovement)
@@ -57,6 +57,10 @@ public class JumpingState : VerticalMovementState
 
 public class FallingState : VerticalMovementState
 {
+    public override void EnterState(PlayerMovement playerMovement)
+    {
+        playerMovement.animator.SetTrigger("ToFall");
+    }
     public override void FixedUpdate(PlayerMovement playerMovement)
     {
         SubVelocityY(playerMovement, 9.81f * Time.fixedDeltaTime); // TODO - remove magical number
