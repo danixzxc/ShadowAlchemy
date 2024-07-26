@@ -17,19 +17,21 @@ public class DashSkill :  Skill
     }
     public override void CastSkill(float direction, GameObject player)
     {
-        Debug.Log("Skastoval");
         _time = _characteristics.dashDistance / _characteristics.dashVelocity;
         _rigidbody = player.GetComponent<Rigidbody2D>();
-        var coroutine = WaitForSkillEnd(direction);
+        var coroutine = WaitForSkillEnd();
         player.GetComponent<PlayerMovement>().StartCoroutine(coroutine); // Evil MonoBehaviour Hack.
+        if (CanCast(player)){
+            player.GetComponent<PlayerMana>().Mana -= data.cost;
+        }
     }
 
-    private IEnumerator WaitForSkillEnd(float direction)
+    private IEnumerator WaitForSkillEnd()
     {
         float time = 0;
         while (time < _time)
         {
-            _rigidbody.velocity = AngleToVec2(direction) * _characteristics.dashVelocity;
+            _rigidbody.velocity = Vector2.right * _characteristics.dashVelocity;
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }

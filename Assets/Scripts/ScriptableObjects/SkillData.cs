@@ -14,7 +14,7 @@ public class SkillData : ScriptableObject
     public bool isDirectional;
     public Sprite sprite;
     public Type[] combination = new Type[3];
-    
+    public int cost = 1;
     
     public bool isValid(Type[] types)
     {
