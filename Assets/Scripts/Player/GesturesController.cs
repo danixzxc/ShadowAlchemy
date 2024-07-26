@@ -126,5 +126,10 @@ public class GesturesController : MonoBehaviour
         {
               _currentSkill.CastSkill(_angle, this.gameObject);
         }
+
+        if (context.canceled)
+        {
+              _currentSkill.Cancel();
+        }
     }
 }

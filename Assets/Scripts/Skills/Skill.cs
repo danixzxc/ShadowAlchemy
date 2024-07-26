@@ -16,5 +16,7 @@ public class Skill
     public virtual bool CanCast(GameObject player) {
         return player.GetComponent<PlayerMana>().Mana > data.cost;
     }
+
+    public virtual void Cancel(){}
     
 }
