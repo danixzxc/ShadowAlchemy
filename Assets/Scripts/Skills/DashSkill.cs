@@ -15,16 +15,23 @@ public class DashSkill :  Skill
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         //Debug.Log("I know characteristics" + _characteristics.dashVelocity);
     }
+
+    public override bool CanCast(GameObject player) {
+        return player.GetComponent<PlayerMana>().Mana > data.cost && player.GetComponent<PlayerMovement>().IsGrounded();
+    }
+
     public override void CastSkill(float direction, GameObject player)
     {
+        if (!CanCast(player)){ return; }
         _time = _characteristics.dashDistance / _characteristics.dashVelocity;
         _rigidbody = player.GetComponent<Rigidbody2D>();
+        player.GetComponent<PlayerMana>().Mana -= data.cost;
         var coroutine = WaitForSkillEnd();
         player.GetComponent<PlayerMovement>().StartCoroutine(coroutine); // Evil MonoBehaviour Hack.
-        if (CanCast(player)){
-            player.GetComponent<PlayerMana>().Mana -= data.cost;
-        }
+        
     }
+
+   
 
     private IEnumerator WaitForSkillEnd()
     {
@@ -35,7 +42,7 @@ public class DashSkill :  Skill
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }
-        _rigidbody.velocity = _rigidbody.velocity / _characteristics.finalVelocityPercent * 100;
+        _rigidbody.velocity = _rigidbody.velocity * _characteristics.finalVelocityPercent / 100;
     }
 
 }
