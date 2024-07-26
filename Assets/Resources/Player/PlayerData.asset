@@ -19,3 +19,4 @@ MonoBehaviour:
   startingManaSegments: 3
   gainPerSecond: 1
   losePerSecond: 2
+  gamepadCursorMaxOffset: 3

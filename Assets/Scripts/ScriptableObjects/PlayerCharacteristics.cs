@@ -17,5 +17,7 @@ public class PlayerCharacteristics : ScriptableObject
     [Header("In Light")]
     [SerializeField]
     public float losePerSecond; 
+    [Header("Gamepad")]
+    public float gamepadCursorMaxOffset;
 
 }
