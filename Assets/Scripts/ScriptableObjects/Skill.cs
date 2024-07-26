@@ -11,7 +11,7 @@ public class Skill : ScriptableObject
 
 {   
     public new string name;
-    public string id;
+    public bool isDirectional;
     public Sprite sprite;
     public Type[] combination = new Type[3];
     
