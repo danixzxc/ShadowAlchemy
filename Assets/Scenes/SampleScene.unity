@@ -865,7 +865,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -6975,6 +6975,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1768697411543493604, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2298372801047360965, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: ManaChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1

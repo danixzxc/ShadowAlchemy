@@ -10,7 +10,7 @@ public class GesturesController : MonoBehaviour
     private int _gestureIndex = 0;
     private Gesture[] _gestures = new Gesture[3];
     public UnityEvent<Gesture[]> OnGesturesChanged;
-    public UnityEvent<Skill> OnSkillChanged;
+    public UnityEvent<SkillData> OnSkillChanged;
 
     private float _angle = 0.0f;
     public float Angle{

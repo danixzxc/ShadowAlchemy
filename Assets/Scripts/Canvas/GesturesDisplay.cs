@@ -40,7 +40,7 @@ public class GesturesDisplay : MonoBehaviour
         }
     }
 
-    private void DisplaySkill(Skill skill)
+    private void DisplaySkill(SkillData skill)
     {
 
         _skillImage.sprite = skill.sprite;
