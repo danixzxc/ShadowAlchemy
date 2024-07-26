@@ -4,10 +4,24 @@ using UnityEngine.InputSystem;
 
 public class GesturesController : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerCharacteristics _playerCharacteristics;
+
     private int _gestureIndex = 0;
     private Gesture[] _gestures = new Gesture[3];
     public UnityEvent<Gesture[]> OnGesturesChanged;
     public UnityEvent<Skill> OnSkillChanged;
+
+    private float _angle = 0.0f;
+    public void SetDirection(Vector2 direction){
+        float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
+        if(angle > 0.0f){
+            _angle = Mathf.Min(_playerCharacteristics.maxUpperAngle, angle);
+        }
+        else{
+            _angle = Mathf.Max(-_playerCharacteristics.maxLowerAngle, angle);
+        }
+    }
 
     // 0 fist 1 middlefinger 2 none 3 pinky
 
@@ -50,7 +64,7 @@ public class GesturesController : MonoBehaviour
         _gestureIndex = FindSlotByType(type);
         _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(2);
 
-        //сместить жесты влево
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         for (_gestureIndex++; _gestureIndex < _gestures.Length; _gestureIndex++)
         {
             _gestures[_gestureIndex - 1] = CombinationManager.Instance.GetGesture((int)_gestures[_gestureIndex].type);
@@ -111,6 +125,6 @@ public class GesturesController : MonoBehaviour
 
     public void CastSkill()
     {
-        Debug.Log("Casting skill");
+        Debug.Log("Casting skill in the angle of " + _angle);
     }
 }

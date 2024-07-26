@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab627204b0f7dfc4ebe7b8b4527b4eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerCharacteristics: {fileID: 11400000, guid: fd323f686d2fef546829d91923748da8, type: 2}
   OnGesturesChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -768,6 +769,18 @@ MonoBehaviour:
       - m_Target: {fileID: 611519484289240656}
         m_TargetAssemblyTypeName: TopRotator, Assembly-CSharp
         m_MethodName: UpdateRotation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5790619603164209483}
+        m_TargetAssemblyTypeName: GesturesController, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
