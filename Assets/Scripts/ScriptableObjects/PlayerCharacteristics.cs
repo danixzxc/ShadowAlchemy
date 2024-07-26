@@ -20,7 +20,9 @@ public class PlayerCharacteristics : ScriptableObject
     [Header("Aiming")]
     public float maxUpperAngle;
     public float maxLowerAngle;
-    [Range(0.0f, 1.0f)]
+    [Range(1.0f, 5.0f)]
+    public float cursorDistanceFromPlayer = 3.0f;
+    [HideInInspector] // Removed property
     public float upperBodyHalfSensitivity = 1.0f;
     
     [Header("Gamepad")]

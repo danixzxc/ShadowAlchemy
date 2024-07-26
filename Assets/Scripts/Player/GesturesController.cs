@@ -13,15 +13,13 @@ public class GesturesController : MonoBehaviour
     public UnityEvent<Skill> OnSkillChanged;
 
     private float _angle = 0.0f;
-    public void SetDirection(Vector2 direction){
-        float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
-        if(angle > 0.0f){
-            _angle = Mathf.Min(_playerCharacteristics.maxUpperAngle, angle);
-        }
-        else{
-            _angle = Mathf.Max(-_playerCharacteristics.maxLowerAngle, angle);
+    public float Angle{
+        get{return _angle;}
+        set{
+            _angle = value;
         }
     }
+    
 
     // 0 fist 1 middlefinger 2 none 3 pinky
 

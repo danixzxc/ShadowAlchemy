@@ -18,7 +18,7 @@ public class PlayerAim : MonoBehaviour
     private Vector3 offset3;
     public UnityEvent<Vector2> DirectionUpdate;
     public UnityEvent<Vector2> RawPositionUpdate;
-    
+    public UnityEvent<float> AngleUpdate;
     private string currentControlScheme;
 
     private PlayerInput playerInput;
@@ -50,5 +50,16 @@ public class PlayerAim : MonoBehaviour
         }        
         DirectionUpdate?.Invoke(direction.normalized);
         RawPositionUpdate?.Invoke(direction);
+        AngleUpdate?.Invoke(CalculateAngle(direction));
+    }
+
+    float CalculateAngle(Vector2 _direction){
+        float angle = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
+        if(angle > 0.0f){
+            return Mathf.Min(_playerCharacteristics.maxUpperAngle, angle);
+        }
+        else{
+            return Mathf.Max(-_playerCharacteristics.maxLowerAngle, angle);
+        }
     }
 }

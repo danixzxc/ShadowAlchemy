@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbe260d7af7b6d72807964644468988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerCharacteristics: {fileID: 11400000, guid: fd323f686d2fef546829d91923748da8, type: 2}
   rotationOffset: -90
 --- !u!1 &1470540103580044958
 GameObject:
@@ -765,10 +766,16 @@ MonoBehaviour:
   offset: {x: 0, y: 1}
   DirectionUpdate:
     m_PersistentCalls:
+      m_Calls: []
+  RawPositionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  AngleUpdate:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 611519484289240656}
-        m_TargetAssemblyTypeName: TopRotator, Assembly-CSharp
-        m_MethodName: UpdateRotation
+      - m_Target: {fileID: 8529608210794339161}
+        m_TargetAssemblyTypeName: CursorMover, Assembly-CSharp
+        m_MethodName: UpdateAngle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -780,7 +787,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5790619603164209483}
         m_TargetAssemblyTypeName: GesturesController, Assembly-CSharp
-        m_MethodName: SetDirection
+        m_MethodName: set_Angle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -790,12 +797,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  RawPositionUpdate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8529608210794339161}
-        m_TargetAssemblyTypeName: CursorMover, Assembly-CSharp
-        m_MethodName: UpdatePosition
+      - m_Target: {fileID: 611519484289240656}
+        m_TargetAssemblyTypeName: TopRotator, Assembly-CSharp
+        m_MethodName: UpdateAngle
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
