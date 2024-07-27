@@ -33,6 +33,8 @@ public class BackstepSkill :  Skill
 
     private IEnumerator WaitForSkillEnd(GameObject player)
     {
+        player.GetComponent<Animator>().ResetTrigger("EndSkill");
+        player.GetComponent<Animator>().SetTrigger("ToBackstep");
         player.GetComponent<ButtonPresser>().CanPress = false;
         float time = 0;
         while (time < _time)
@@ -43,6 +45,7 @@ public class BackstepSkill :  Skill
         }
         _rigidbody.velocity = -1 * _rigidbody.velocity * _characteristics.backstepFinalVelocityPercent / 100;
         player.GetComponent<ButtonPresser>().CanPress = true;
+        player.GetComponent<Animator>().SetTrigger("EndSkill");
     }
 
 }

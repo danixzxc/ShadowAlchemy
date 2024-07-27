@@ -34,6 +34,8 @@ public class DashSkill :  Skill
 
     private IEnumerator WaitForSkillEnd(GameObject player)
     {
+        player.GetComponent<Animator>().ResetTrigger("EndSkill");
+        player.GetComponent<Animator>().SetTrigger("ToDash");
         player.GetComponent<ButtonPresser>().CanPress = false;
         float time = 0;
         while (time < _time)
@@ -44,6 +46,7 @@ public class DashSkill :  Skill
         }
         _rigidbody.velocity = _rigidbody.velocity * _characteristics.dashFinalVelocityPercent / 100;
         player.GetComponent<ButtonPresser>().CanPress = true;
+        player.GetComponent<Animator>().SetTrigger("EndSkill");
     }
 
 }
