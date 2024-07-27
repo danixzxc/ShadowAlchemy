@@ -35,7 +35,8 @@ public class CombinationManager
                     new ShurikenSkill(),
                     new SmokeBombSkill(),
                     new HookSkill(),
-                    new SwordSkill()
+                    new SwordSkill(),
+                    new ConcentrationSkill()
                 }; 
             }
             return _instance;

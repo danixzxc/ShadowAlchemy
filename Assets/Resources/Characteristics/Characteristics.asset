@@ -44,3 +44,6 @@ MonoBehaviour:
   swordBounceSpeed: 8
   swordBounceDelay: 0.2
   swordBounceSlowdown: 0.1
+  concentrationDuration: 6
+  concentrationTimeSpeedPercent: 20
+  concentrationDesaturationPercent: 0.1
