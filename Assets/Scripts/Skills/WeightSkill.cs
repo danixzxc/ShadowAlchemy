@@ -28,7 +28,10 @@ public class WeightSkill : Skill
 
     private IEnumerator SkillCoroutine(GameObject player, float angle)
     {
-        Object.Instantiate(projectile, new Vector3(1.0f, 1.0f, 0.0f), Quaternion.identity);
+        var thing = Object.Instantiate(projectile, player.transform.position + new Vector3(1.0f, 1.0f, 0.0f), Quaternion.identity);
+        thing.GetComponent<Rigidbody2D>().gravityScale = _characteristics.weightGravityMultiplier;
+        thing.GetComponent<MovingDamageDealer>().damage = _characteristics.weightDamage;
+        thing.GetComponent<MovingDamageDealer>().minimalVelocity = _characteristics.weightMinimalVelocity;
         yield return new WaitForFixedUpdate();
     }
 }

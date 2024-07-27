@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
   m_Name: Weight
   m_EditorClassIdentifier: 
-  name: 
+  name: weight
   isDirectional: 0
-  sprite: {fileID: 0}
-  combination: 000000000000000000000000
+  sprite: {fileID: -81621335, guid: 5f5ffc8f757e95f3e83e65bd605ea70b, type: 3}
+  combination: 000000000300000001000000
   cost: 1

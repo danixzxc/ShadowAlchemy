@@ -34,6 +34,8 @@ public class SkillsCharacteristics : ScriptableObject
     [Space(10), Header("Weight")]
     public GameObject weightPrefab;
     public float weightGravityMultiplier;
+    public float weightMinimalVelocity;
+    public float weightDamage;
 
     [Space(10), Header("SmokeBomb")]
     public GameObject smokeBombPrefab;
