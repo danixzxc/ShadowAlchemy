@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6405610824119943863}
   - component: {fileID: 6957521280930095876}
   - component: {fileID: 8529608210794339161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8485334951750223780}
   - component: {fileID: 611519484289240656}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4005221396503884533}
   - component: {fileID: 4370481587476414667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882365438420093952}
   - component: {fileID: 7788763254611940668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 4326685819603800183}
   - component: {fileID: 7330618711316383508}
   - component: {fileID: 395864603776026159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,6 +785,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gamepadDeadzone: 0.3
 --- !u!114 &395864603776026159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4064788917237424421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
