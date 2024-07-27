@@ -42,7 +42,7 @@ public class JumpingState : VerticalMovementState
     public override void FixedUpdate(PlayerMovement playerMovement)
     {
         //SubVelocityY(playerMovement, 9.81f * Time.fixedDeltaTime); // TODO - remove magical number
-        if (GetVelocityY(playerMovement) < 0.0f){
+        if (GetVelocityY(playerMovement) <= 0.0f){
             playerMovement.ChangeVerticalState(playerMovement.fallingState);
         }
     }
