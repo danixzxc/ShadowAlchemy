@@ -75,7 +75,7 @@
                 {
                     "name": "",
                     "id": "939cd4cd-9f21-455e-a2ba-8657f5014e4f",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -97,7 +97,7 @@
                 {
                     "name": "",
                     "id": "329aeb5c-d38e-48a1-a5c5-47cb973bdf36",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -119,7 +119,7 @@
                 {
                     "name": "",
                     "id": "4b42bd18-c222-4c25-9b27-ec8477d0510d",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -141,7 +141,29 @@
                 {
                     "name": "",
                     "id": "21777b6c-021f-4899-b2ca-76b98a1bfcbb",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CastSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c707bc24-dcf8-4684-9252-7347667723b9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "CastSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f8e085d-de59-4c6f-a913-f5a3aebd4587",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",

@@ -12,7 +12,7 @@ public class PlayerAim : MonoBehaviour
     private Mouse mouse;
     private Gamepad gamepad;
 
-    private Vector2 direction;
+    private Vector2 direction = Vector2.right;
     
     public Vector2 offset = Vector2.zero;
     private Vector3 offset3;
@@ -22,6 +22,8 @@ public class PlayerAim : MonoBehaviour
     private string currentControlScheme;
 
     private PlayerInput playerInput;
+
+    public float gamepadDeadzone = 0.3f;
 
 
     void Start(){
@@ -35,7 +37,8 @@ public class PlayerAim : MonoBehaviour
         if (currentControlScheme == "KeyboardMouse")
         {
             mouse = Mouse.current;
-            Assert.IsNotNull(mouse); // IF MOUSE ISNT FOUND THEN SOMETHING FUCKED UP
+            //Assert.IsNotNull(mouse); // IF MOUSE ISNT FOUND THEN SOMETHING FUCKED UP
+            if (mouse == null){break;}
             Vector3 mousePos = mouse.position.ReadValue();   
             mousePos.z=Camera.main.nearClipPlane;
             Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);
@@ -45,8 +48,26 @@ public class PlayerAim : MonoBehaviour
         else if (currentControlScheme == "Gamepad")
         {
             gamepad = Gamepad.current;
-            Assert.IsNotNull(gamepad); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
-            direction = gamepad.rightStick.ReadValue() * _playerCharacteristics.gamepadCursorMaxOffset;
+            //Assert.IsNotNull(gamepad); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
+            if (gamepad == null){break;}
+            Vector2 left = gamepad.leftStick.ReadValue();
+            if (left.magnitude < gamepadDeadzone){
+                left = Vector2.zero;
+            }
+            if (left == Vector2.zero){
+                Vector2 right = gamepad.rightStick.ReadValue();
+                if (right.magnitude < gamepadDeadzone){
+                    right = Vector2.zero;
+                }
+                if (right == Vector2.zero){
+                    // Nothing, leave direction since prev frame
+                } else{
+                    direction = right * _playerCharacteristics.gamepadCursorMaxOffset;
+                }
+            }
+            else {
+                direction = left * _playerCharacteristics.gamepadCursorMaxOffset;
+            }
         }        
         DirectionUpdate?.Invoke(direction.normalized);
         RawPositionUpdate?.Invoke(direction);
