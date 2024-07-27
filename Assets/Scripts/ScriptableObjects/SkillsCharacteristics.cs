@@ -26,4 +26,33 @@ public class SkillsCharacteristics : ScriptableObject
     public float wallrunAngle;
     public float wallrunFinalVelocityPercent;
 
+    [Space(10), Header("Shuriken")]
+    public GameObject shurikenPrefab;
+    public float shurikenSpeed;
+    public float shurikenDamage;
+
+    [Space(10), Header("Weight")]
+    public GameObject weightPrefab;
+    public float weightGravityMultiplier;
+
+    [Space(10), Header("SmokeBomb")]
+    public GameObject smokeBombPrefab;
+    public float smokeInvisTime;
+
+    [Space(10), Header("Grappling Hook")]
+    public GameObject hookPrefab;
+    public float hookTimeLimit;
+    public float hookSpeed;
+    public float hookEnemyPullSpeed;
+    public float hookDamage;
+    public float hookPlayerTravelSpeed;
+
+    [Space(10), Header("Sword")]
+    public GameObject swordPrefab;
+    public float swordSpeed;
+    public float swordDamage;
+    public float swordBounceSpeed;
+    public float swordBounceDelay;
+    public float swordBounceSlowdown;
+
 }

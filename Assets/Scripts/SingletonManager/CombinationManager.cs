@@ -30,7 +30,12 @@ public class CombinationManager
                     new DashSkill(),
                     new BackstepSkill(),
                     new JumpSkill(),
-                    new WallrunSkill()
+                    new WallrunSkill(),
+                    new WeightSkill(),
+                    new ShurikenSkill(),
+                    new SmokeBombSkill(),
+                    new HookSkill(),
+                    new SwordSkill()
                 }; 
             }
             return _instance;
