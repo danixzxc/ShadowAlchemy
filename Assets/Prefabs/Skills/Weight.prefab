@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7862740194368712004}
   - component: {fileID: -5776014761512721792}
   - component: {fileID: -2239908964836706469}
+  - component: {fileID: 1425002144093851097}
   m_Layer: 0
   m_Name: Weight
   m_TagString: Untagged
@@ -185,5 +186,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dc552ee954f1383aa946d6fe02b0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDamageDealt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 1
   minimalVelocity: 1
+--- !u!114 &1425002144093851097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152859808908955390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1f44d120b48d534a43a2a361ae98b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

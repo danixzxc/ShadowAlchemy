@@ -26,15 +26,16 @@ public class DashSkill :  Skill
         _time = _characteristics.dashDistance / _characteristics.dashVelocity;
         _rigidbody = player.GetComponent<Rigidbody2D>();
         player.GetComponent<PlayerMana>().Mana -= data.cost;
-        var coroutine = WaitForSkillEnd();
+        var coroutine = WaitForSkillEnd(player);
         player.GetComponent<PlayerMovement>().StartCoroutine(coroutine); // Evil MonoBehaviour Hack.
         
     }
 
    
 
-    private IEnumerator WaitForSkillEnd()
+    private IEnumerator WaitForSkillEnd(GameObject player)
     {
+        player.GetComponent<ButtonPresser>().CanPress = false;
         float time = 0;
         while (time < _time)
         {
@@ -43,6 +44,7 @@ public class DashSkill :  Skill
             time += Time.fixedDeltaTime;
         }
         _rigidbody.velocity = _rigidbody.velocity * _characteristics.dashFinalVelocityPercent / 100;
+        player.GetComponent<ButtonPresser>().CanPress = true;
     }
 
 }
