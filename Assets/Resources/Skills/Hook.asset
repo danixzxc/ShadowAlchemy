@@ -15,4 +15,5 @@ MonoBehaviour:
   name: hook
   isDirectional: 1
   sprite: {fileID: 21300000, guid: 152261d73f8f4784bb4fa4a2cd9fa8a3, type: 3}
-  combination: 020000000300000000000000
+  combination: 030000000000000002000000
+  cost: 1

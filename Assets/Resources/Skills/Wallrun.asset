@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
   m_Name: Wallrun
   m_EditorClassIdentifier: 
-  name: backstep
+  name: wallrun
   isDirectional: 0
-  sprite: {fileID: 21300000, guid: 8ca5e79a7af9cbd939b04cdc0cc9c1e4, type: 3}
-  combination: 030000000200000001000000
+  sprite: {fileID: 21300000, guid: 28ae5d42666154c1cafc75eeef524722, type: 3}
+  combination: 020000000300000001000000
   cost: 1

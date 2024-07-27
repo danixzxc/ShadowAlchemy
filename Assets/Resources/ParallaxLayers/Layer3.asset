@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Layer3
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: ca6841502e6bca24187cacb218fd5561, type: 3}
-  - {fileID: 21300000, guid: 72f963192729de64fa7ebe4d8841c359, type: 3}
-  - {fileID: 21300000, guid: 2dc0633c53c519640aa5bc04c4994099, type: 3}
-  parallaxFactor: 0.3
+  - {fileID: 21300000, guid: 09f5ee22f15280c4b9a98e3726b05b5a, type: 3}
+  parallaxFactor: 0

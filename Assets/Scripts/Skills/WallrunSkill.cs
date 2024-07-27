@@ -53,6 +53,8 @@ public class WallrunSkill :  Skill
             yield return new WaitForFixedUpdate();
         }
         hasJumped = false;
+
+        
     }
 
 
