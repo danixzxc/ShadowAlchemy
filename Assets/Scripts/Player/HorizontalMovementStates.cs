@@ -5,7 +5,6 @@ public class RunningState : HorizontalMovementState
 {
     public override void FixedUpdate(PlayerMovement playerMovement)
     {
-       //playerMovement.transform.Translate(Vector3.right * 3 * Time.fixedDeltaTime);
         if (GetVelocityX(playerMovement) <= playerMovement.MaxHorizontalVelocity){
             AddVelocityX(playerMovement, playerMovement.RunningAcceleration * Time.fixedDeltaTime);
         }

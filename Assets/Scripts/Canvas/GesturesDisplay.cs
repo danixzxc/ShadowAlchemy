@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class GesturesDisplay : MonoBehaviour
 {
-    // [SerializeField] private List<Image> _images;
-
     private GesturesController _gesturesController;
 
     [SerializeField] private Image[] _gestureImages = new Image[3];

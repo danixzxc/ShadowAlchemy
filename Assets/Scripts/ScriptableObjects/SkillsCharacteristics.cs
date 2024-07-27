@@ -57,4 +57,10 @@ public class SkillsCharacteristics : ScriptableObject
     public float swordBounceDelay;
     public float swordBounceSlowdown;
 
+    [Space(10), Header("Concentration")]
+    public float concentrationDuration;
+    public float concentrationTimeSpeedPercent;
+    [Range(0.0f, 0.2f)]
+    public float concentrationDesaturationPercent = 0.1f;
+
 }

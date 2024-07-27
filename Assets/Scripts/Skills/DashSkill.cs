@@ -13,7 +13,6 @@ public class DashSkill :  Skill
     {
         data = CombinationManager.Instance.GetSkillData("dash");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
-        //Debug.Log("I know characteristics" + _characteristics.dashVelocity);
     }
 
     public override bool CanCast(GameObject player) {

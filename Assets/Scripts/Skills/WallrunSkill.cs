@@ -24,6 +24,7 @@ public class WallrunSkill :  Skill
     {
         if (!CanCast(player)){ return; }
         skillCanceled = false;
+        player.GetComponent<PlayerMana>().Mana -= data.cost;
         var playerMovement = player.GetComponent<PlayerMovement>();
         var rigidbody = player.GetComponent<Rigidbody2D>();
         var playerWallrunSensor = player.GetComponent<PlayerWallrunSensor>();
@@ -36,7 +37,6 @@ public class WallrunSkill :  Skill
     {
         skillCanceled = true;
     }
-    // multiple wallruns fix
     private IEnumerator WaitForSkillEnd(PlayerMovement playerMovement, Rigidbody2D rigidbody, PlayerWallrunSensor playerWallrunSensor)
     {
         hasJumped = true;
