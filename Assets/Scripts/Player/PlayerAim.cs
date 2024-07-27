@@ -37,8 +37,6 @@ public class PlayerAim : MonoBehaviour
         if (currentControlScheme == "KeyboardMouse")
         {
             mouse = Mouse.current;
-            //Assert.IsNotNull(mouse); // IF MOUSE ISNT FOUND THEN SOMETHING FUCKED UP
-            if (mouse == null){break;}
             Vector3 mousePos = mouse.position.ReadValue();   
             mousePos.z=Camera.main.nearClipPlane;
             Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);
@@ -49,7 +47,6 @@ public class PlayerAim : MonoBehaviour
         {
             gamepad = Gamepad.current;
             //Assert.IsNotNull(gamepad); // IF GAMEPAD ISNT FOUND THEN SOMETHING FUCKED UP
-            if (gamepad == null){break;}
             Vector2 left = gamepad.leftStick.ReadValue();
             if (left.magnitude < gamepadDeadzone){
                 left = Vector2.zero;

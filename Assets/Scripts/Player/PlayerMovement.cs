@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask _groundLayer;
 
+
     [SerializeField]
     public InputActionAsset playerInput;
 
@@ -110,6 +111,22 @@ public class PlayerMovement : MonoBehaviour
             return true;
         }
         
+        return false;
+    }
+
+    public bool TouchingWall()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.right;
+        float distance = 0.33f;
+
+        RaycastHit2D hit = Physics2D.BoxCast(position + new Vector2(0.0f, 1.0f), 
+            new Vector2(1.0f, 2.0f), 0.0f, Vector2.right, distance, _groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
         return false;
     }
 
