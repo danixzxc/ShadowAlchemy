@@ -10,7 +10,3 @@ public class SmokeBombSkill : Skill
 public class HookSkill : Skill
 {
 }
-
-public class SwordSkill : Skill
-{
-}

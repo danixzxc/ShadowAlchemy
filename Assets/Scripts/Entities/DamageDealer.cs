@@ -13,6 +13,9 @@ public class DamageDealer : MonoBehaviour
             body.RecieveDamage(damage);
             OnDamageDealt?.Invoke();
         }
+        else{
+            
+        }
         OnCollision?.Invoke();
     }
 }

@@ -38,9 +38,9 @@ MonoBehaviour:
   hookEnemyPullSpeed: 0
   hookDamage: 0
   hookPlayerTravelSpeed: 0
-  swordPrefab: {fileID: 0}
-  swordSpeed: 0
-  swordDamage: 0
-  swordBounceSpeed: 0
-  swordBounceDelay: 0
-  swordBounceSlowdown: 0
+  swordPrefab: {fileID: 8933829272211065171, guid: 6b9dc587ef0018d90908f566912990d7, type: 3}
+  swordSpeed: 20
+  swordDamage: 3
+  swordBounceSpeed: 8
+  swordBounceDelay: 0.2
+  swordBounceSlowdown: 0.1
