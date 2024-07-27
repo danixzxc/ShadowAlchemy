@@ -24,15 +24,16 @@ public class BackstepSkill :  Skill
         _time = _characteristics.backstepDistance / _characteristics.backstepVelocity;
         _rigidbody = player.GetComponent<Rigidbody2D>();
         player.GetComponent<PlayerMana>().Mana -= data.cost;
-        var coroutine = WaitForSkillEnd();
+        var coroutine = WaitForSkillEnd(player);
         player.GetComponent<PlayerMovement>().StartCoroutine(coroutine); // Evil MonoBehaviour Hack.
         
     }
 
    
 
-    private IEnumerator WaitForSkillEnd()
+    private IEnumerator WaitForSkillEnd(GameObject player)
     {
+        player.GetComponent<ButtonPresser>().CanPress = false;
         float time = 0;
         while (time < _time)
         {
@@ -41,6 +42,7 @@ public class BackstepSkill :  Skill
             time += Time.fixedDeltaTime;
         }
         _rigidbody.velocity = -1 * _rigidbody.velocity * _characteristics.backstepFinalVelocityPercent / 100;
+        player.GetComponent<ButtonPresser>().CanPress = true;
     }
 
 }
