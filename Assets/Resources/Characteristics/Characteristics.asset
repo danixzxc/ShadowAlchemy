@@ -47,3 +47,8 @@ MonoBehaviour:
   concentrationDuration: 6
   concentrationTimeSpeedPercent: 20
   concentrationDesaturationPercent: 0.1
+  spinningAttackVelocity: 20
+  spinningAttackDistance: 10
+  spinningAttackDamage: 5
+  spinningAttackDuration: 3
+  spinningAttackFinalVelocityPercent: 50

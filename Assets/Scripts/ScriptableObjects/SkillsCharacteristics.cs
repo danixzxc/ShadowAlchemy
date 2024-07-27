@@ -63,4 +63,11 @@ public class SkillsCharacteristics : ScriptableObject
     [Range(0.0f, 0.2f)]
     public float concentrationDesaturationPercent = 0.1f;
 
+    [Space(10), Header("Spinning Attack")]
+    public float spinningAttackVelocity;
+    public float spinningAttackDistance;
+    public float spinningAttackDamage; 
+    public float spinningAttackDuration; 
+    public float spinningAttackFinalVelocityPercent;
+
 }
