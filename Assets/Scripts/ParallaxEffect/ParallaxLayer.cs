@@ -3,40 +3,30 @@ using UnityEngine.UIElements;
 
 public class ParallaxLayer : MonoBehaviour
 {
-    [SerializeField]
-    private ParallaxLayerData _data;
-
-    private SpriteRenderer _parentObjectSpriteRenderer;
-    private SpriteRenderer _childObjectSpriteRenderer;
 
     private float _startPosition;
+    [SerializeField]
     private GameObject _camera;
     private float _length;
+    [SerializeField]
+    private float _parallaxEffect;
 
     private void Start()
     {
         _startPosition = transform.position.x;
-        _camera = FindObjectOfType<Camera>().gameObject;
-        _parentObjectSpriteRenderer = GetComponent<SpriteRenderer>();
-        _childObjectSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        _length = _parentObjectSpriteRenderer.bounds.size.x;
-        
-        _childObjectSpriteRenderer.sprite = _data.sprites[Random.Range(0, _data.sprites.Count)];
+        _length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        float distance = _camera.transform.position.x * _data.parallaxFactor;
-        float movement = _camera.transform.position.x * (1 - _data.parallaxFactor);
-        
+        float distance = _camera.transform.position.x * _parallaxEffect;
+        float movement = _camera.transform.position.x * (1 - _parallaxEffect);
+
         transform.position = new Vector3(_startPosition + distance, transform.position.y, transform.position.z);
 
-        if(movement > _startPosition + _length)
+        if (movement > _startPosition + _length)
         {
-            _parentObjectSpriteRenderer.sprite = _childObjectSpriteRenderer.sprite;
             _startPosition += _length;
-            _childObjectSpriteRenderer.sprite = _data.sprites[Random.Range(0, _data.sprites.Count)];
         }
     }
-
 }
