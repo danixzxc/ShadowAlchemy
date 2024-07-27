@@ -23,9 +23,9 @@ MonoBehaviour:
   wallrunDistance: 1.7
   wallrunAngle: 30
   wallrunFinalVelocityPercent: 60
-  shurikenPrefab: {fileID: 0}
-  shurikenSpeed: 0
-  shurikenDamage: 0
+  shurikenPrefab: {fileID: 8095205037625662692, guid: 1ebfbaba6f0b96ff49cc854f8dbaebc5, type: 3}
+  shurikenSpeed: 20
+  shurikenDamage: 1
   weightPrefab: {fileID: 4152859808908955390, guid: 443bab0986f35b7cba02d13f2a929ecd, type: 3}
   weightGravityMultiplier: 2
   weightMinimalVelocity: 0.8
