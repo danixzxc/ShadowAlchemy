@@ -28,6 +28,9 @@ public class ShurikenSkill : Skill
 
     private IEnumerator SkillCoroutine(GameObject player, float angle)
     {
+        player.GetComponent<Animator>().ResetTrigger("EndSkill");
+        player.GetComponent<Animator>().SetTrigger("Shuriken");
+        yield return new WaitForSeconds(0.15f);
         var thing = Object.Instantiate(projectile, player.transform.position + new Vector3(0.3f, 1.0f, 0.0f), Quaternion.identity);
         thing.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         thing.GetComponent<Rigidbody2D>().velocity = AngleToVec2(angle) * _characteristics.shurikenSpeed;

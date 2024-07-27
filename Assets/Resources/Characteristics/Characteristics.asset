@@ -41,8 +41,8 @@ MonoBehaviour:
   swordPrefab: {fileID: 8933829272211065171, guid: 6b9dc587ef0018d90908f566912990d7, type: 3}
   swordSpeed: 20
   swordDamage: 3
-  swordBounceSpeed: 8
-  swordBounceDelay: 0.2
+  swordBounceSpeed: 12
+  swordBounceDelay: 0.1
   swordBounceSlowdown: 0.1
   concentrationDuration: 6
   concentrationTimeSpeedPercent: 20
