@@ -50,12 +50,12 @@ public class WallrunSkill :  Skill
             yield return new WaitForFixedUpdate();
         }
         rigidbody.velocity = new Vector2(rigidbody.velocity.x / 100 * _characteristics.wallrunFinalVelocityPercent, -0.3f);
+        animator.SetTrigger("EndSkill");
         while (!playerMovement.IsGrounded()) 
         {
             yield return new WaitForFixedUpdate();
         }
         hasJumped = false;
-        animator.SetTrigger("EndSkill");
         
     }
 
