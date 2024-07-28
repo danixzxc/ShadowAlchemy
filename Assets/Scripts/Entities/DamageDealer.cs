@@ -5,6 +5,7 @@ public class DamageDealer : MonoBehaviour
 {
     public UnityEvent OnDamageDealt;
     public UnityEvent OnCollision;
+    public UnityEvent OnTrigger;
     public float damage = 1.0f;
     protected virtual void OnCollisionEnter2D(Collision2D collision) 
     { 
@@ -23,6 +24,6 @@ public class DamageDealer : MonoBehaviour
             body.RecieveDamage(damage);
             OnDamageDealt?.Invoke();
         }
-        OnCollision?.Invoke();
+        OnTrigger?.Invoke();
     }
 }
