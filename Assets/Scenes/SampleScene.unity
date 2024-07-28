@@ -3539,10 +3539,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1109185267618977534, guid: a51689bd5889d1c89abee530eb8373ba, type: 3}
-      propertyPath: damageTakerTag
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6208641150675386143, guid: a51689bd5889d1c89abee530eb8373ba, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -10825,10 +10821,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8166237109921266165, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166237109921266165, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8936963726317596713, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}

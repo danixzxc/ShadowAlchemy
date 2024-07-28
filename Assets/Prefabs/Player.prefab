@@ -336,10 +336,9 @@ GameObject:
   - component: {fileID: 395864603776026159}
   - component: {fileID: 4742065682358131972}
   - component: {fileID: 259372753236181425}
-  - component: {fileID: 1317712170436674696}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -830,33 +829,6 @@ MonoBehaviour:
   sprites:
   - {fileID: 7788763254611940668}
   - {fileID: 4370481587476414667}
---- !u!114 &1317712170436674696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166237109921266165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4390eaf73f8a6373eb04936eb59045ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4326685819603800183}
-        m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
-        m_MethodName: InvokeDeath
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &9156151514845778133
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,4 +97,3 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 2
-  damageTakerTag: Enemy

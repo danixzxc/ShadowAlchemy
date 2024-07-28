@@ -122,6 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDamageDealt:
     m_PersistentCalls:
+      m_Calls: []
+  OnCollision:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6360229660523219944}
         m_TargetAssemblyTypeName: SelfDestructComponent, Assembly-CSharp
@@ -135,11 +138,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnCollision:
-    m_PersistentCalls:
-      m_Calls: []
   damage: 1
-  damageTakerTag: Enemy
 --- !u!114 &6360229660523219944
 MonoBehaviour:
   m_ObjectHideFlags: 0
