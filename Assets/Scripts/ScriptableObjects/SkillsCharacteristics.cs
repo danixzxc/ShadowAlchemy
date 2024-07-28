@@ -70,4 +70,7 @@ public class SkillsCharacteristics : ScriptableObject
     public float spinningAttackDamage; 
     public float spinningAttackFinalVelocityPercent;
 
+    [Space(10), Header("Parry")]
+    public float parryDuration;
+
 }

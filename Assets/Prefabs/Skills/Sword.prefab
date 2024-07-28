@@ -139,7 +139,8 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
-  damage: 1
+  damage: 3
+  damageTakerTag: Enemy
   bouncer: {fileID: 9162782591828575736}
   _groundLayer:
     serializedVersion: 2
@@ -163,6 +164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 3
+  damageTakerTag: Enemy
   minimalVelocity: 0.3
 --- !u!50 &4038062566586494460
 Rigidbody2D:

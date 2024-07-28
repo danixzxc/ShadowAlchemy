@@ -6,10 +6,11 @@ public class DamageDealer : MonoBehaviour
     public UnityEvent OnDamageDealt;
     public UnityEvent OnCollision;
     public float damage = 1.0f;
+    public string damageTakerTag = "Enemy";
     protected virtual void OnCollisionEnter2D(Collision2D collision) 
     { 
         var body = collision.collider.GetComponent<DamageableBody>();
-        if(body != null){
+        if(body != null && collision.gameObject.CompareTag(damageTakerTag)){
             body.RecieveDamage(damage);
             OnDamageDealt?.Invoke();
         }
@@ -18,7 +19,7 @@ public class DamageDealer : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         var body = collision.GetComponent<DamageableBody>();
-        if (body != null)
+        if (body != null && collision.CompareTag(damageTakerTag))
         {
             body.RecieveDamage(damage);
             OnDamageDealt?.Invoke();

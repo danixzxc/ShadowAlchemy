@@ -47,8 +47,8 @@ MonoBehaviour:
   concentrationDuration: 6
   concentrationTimeSpeedPercent: 20
   concentrationDesaturationPercent: 0.1
+  spinningAttackHitbox: {fileID: 622838657528860051, guid: 253eab3608ef7a74b9b3fb39fd54a009, type: 3}
   spinningAttackVelocity: 20
   spinningAttackDistance: 10
   spinningAttackDamage: 5
-  spinningAttackDuration: 3
   spinningAttackFinalVelocityPercent: 50
