@@ -30,8 +30,8 @@ MonoBehaviour:
   weightGravityMultiplier: 2
   weightMinimalVelocity: 0.8
   weightDamage: 5
-  smokeBombPrefab: {fileID: 0}
-  smokeInvisTime: 0
+  smokeBombPrefab: {fileID: 2212878955561692418, guid: 6e964b474818fda97b0c70ae8be98616, type: 3}
+  smokeInvisTime: 3
   hookPrefab: {fileID: 0}
   hookTimeLimit: 0
   hookSpeed: 0
