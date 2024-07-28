@@ -42,14 +42,14 @@ public class SpinningAttackSkill :  Skill
         var hitbox = Object.Instantiate(_hitbox, player.transform.position + new Vector3(0f, .9f, 0.0f), Quaternion.identity);
         hitbox.GetComponent<DamageDealer>().damage = _characteristics.spinningAttackDamage;
         hitbox.transform.SetParent(player.transform);
-        player.GetComponent<PlayerDeath>().invulnerable = true;
+        player.GetComponent<PlayerDeath>().ImmuneTo.Add(DamageType.Samurai);
         while (time < _dashtime)
         {
             _rigidbody.velocity = Vector2.right * _characteristics.spinningAttackVelocity;
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }
-        player.GetComponent<PlayerDeath>().invulnerable = false;
+        player.GetComponent<PlayerDeath>().ImmuneTo.Remove(DamageType.Samurai);
         _rigidbody.velocity = _rigidbody.velocity * _characteristics.spinningAttackFinalVelocityPercent / 100;
         player.GetComponent<ButtonPresser>().CanPress = true;
         player.GetComponent<Animator>().SetTrigger("EndSkill");

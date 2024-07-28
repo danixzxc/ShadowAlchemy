@@ -37,7 +37,8 @@ public class CombinationManager
                     new HookSkill(),
                     new SwordSkill(),
                     new ConcentrationSkill(),
-                    new SpinningAttackSkill()
+                    new SpinningAttackSkill(),
+                    new ParrySkill()
                 }; 
             }
             return _instance;
