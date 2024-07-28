@@ -65,7 +65,7 @@ public class HookSkill : Skill
             if(pullable != null){
                 float time = 0.0f;
                 Coroutine pullCoroutine = pullable.Pull(player.transform.Find("Center"), _characteristics.hookEnemyPullSpeed, 2.0f);
-                while((((Vector2)player.transform.position)-(Vector2)collider.transform.position).magnitude > 2.0f){
+                while(collider!=null && (((Vector2)player.transform.position)-(Vector2)collider.transform.position).magnitude > 2.0f){
                     thing.GetComponent<Rigidbody2D>().position = collider.transform.position;
                     time += Time.fixedDeltaTime;
                     if (cancelled || time >= _characteristics.hookTimeLimit){
@@ -76,7 +76,7 @@ public class HookSkill : Skill
                 }
             }
             // Pull player towards ground
-            if(collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
+            if(collider!=null && collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
                 float time = 0.0f;
                 Vector2 delta = ((Vector2)player.transform.position)-(Vector2)thing.transform.position;
                 while(delta.magnitude > 1.0f){
