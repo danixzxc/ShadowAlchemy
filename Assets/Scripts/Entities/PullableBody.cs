@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PullableBody : MonoBehaviour
 {
-    void Pull(Transform where, float speed, float distance){
+    Coroutine Pull(Transform where, float speed, float distance){
         var coroutine = PullCoroutine(where, speed, distance);
-        StartCoroutine(coroutine);
+        return StartCoroutine(coroutine);
     }
 
     private IEnumerator PullCoroutine(Transform where, float speed, float distance){
