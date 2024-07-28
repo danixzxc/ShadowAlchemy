@@ -30,7 +30,7 @@ public class ParrySkill :  Skill
     private IEnumerator WaitForSkillEnd(GameObject player)
     {
         player.GetComponent<Animator>().ResetTrigger("EndSkill");
-        //player.GetComponent<Animator>().SetTrigger("ToParry");
+        player.GetComponent<Animator>().SetTrigger("Parry");
         float time = 0;
         player.GetComponent<PlayerDeath>().ImmuneTo.Add(DamageType.Fire);
         while (time < _characteristics.parryDuration)

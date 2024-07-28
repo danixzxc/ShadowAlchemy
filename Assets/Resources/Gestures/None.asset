@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: None
   m_EditorClassIdentifier: 
   type: 1
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 49079b3f8318d9234a89bc197ace743b, type: 3}
   correspondingInput: 
