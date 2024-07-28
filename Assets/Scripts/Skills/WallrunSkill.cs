@@ -28,7 +28,8 @@ public class WallrunSkill :  Skill
         var playerMovement = player.GetComponent<PlayerMovement>();
         var rigidbody = player.GetComponent<Rigidbody2D>();
         var playerWallrunSensor = player.GetComponent<PlayerWallrunSensor>();
-        var coroutine = WaitForSkillEnd(playerMovement, rigidbody, playerWallrunSensor, player.GetComponent<Animator>());
+        var collider = player.GetComponent<BoxCollider2D>();
+        var coroutine = WaitForSkillEnd(playerMovement, rigidbody, playerWallrunSensor, player.GetComponent<Animator>(), collider);
         playerMovement.StartCoroutine(coroutine);
     }
 
@@ -37,10 +38,11 @@ public class WallrunSkill :  Skill
     {
         skillCanceled = true;
     }
-    private IEnumerator WaitForSkillEnd(PlayerMovement playerMovement, Rigidbody2D rigidbody, PlayerWallrunSensor playerWallrunSensor, Animator animator)
+    private IEnumerator WaitForSkillEnd(PlayerMovement playerMovement, Rigidbody2D rigidbody, PlayerWallrunSensor playerWallrunSensor, Animator animator, BoxCollider2D collider)
     {
         animator.ResetTrigger("EndSkill");
         animator.SetTrigger("ToWallrun");
+        collider.size = new Vector2(collider.size.x, 1);
         hasJumped = true;
         rigidbody.velocity = AngleToVec2(_characteristics.wallrunAngle)
             * rigidbody.velocity.magnitude * _characteristics.wallrunDistance;
@@ -50,6 +52,7 @@ public class WallrunSkill :  Skill
             yield return new WaitForFixedUpdate();
         }
         rigidbody.velocity = new Vector2(rigidbody.velocity.x / 100 * _characteristics.wallrunFinalVelocityPercent, -0.3f);
+        collider.size = new Vector2(collider.size.x, 2);
         animator.SetTrigger("EndSkill");
         while (!playerMovement.IsGrounded()) 
         {
