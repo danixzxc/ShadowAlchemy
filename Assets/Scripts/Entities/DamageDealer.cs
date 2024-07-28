@@ -13,8 +13,15 @@ public class DamageDealer : MonoBehaviour
             body.RecieveDamage(damage);
             OnDamageDealt?.Invoke();
         }
-        else{
-            
+        OnCollision?.Invoke();
+    }
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        var body = collision.GetComponent<DamageableBody>();
+        if (body != null)
+        {
+            body.RecieveDamage(damage);
+            OnDamageDealt?.Invoke();
         }
         OnCollision?.Invoke();
     }

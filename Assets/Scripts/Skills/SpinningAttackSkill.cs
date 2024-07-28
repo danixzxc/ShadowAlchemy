@@ -8,10 +8,12 @@ public class SpinningAttackSkill :  Skill
 
     private Rigidbody2D _rigidbody;
     private float _dashtime;
+    private GameObject _hitbox;
     public SpinningAttackSkill()
     {
         data = CombinationManager.Instance.GetSkillData("spinningAttack");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
+        _hitbox = _characteristics.spinningAttackHitbox;
     }
 
     public override bool CanCast(GameObject player) {
@@ -34,25 +36,20 @@ public class SpinningAttackSkill :  Skill
     private IEnumerator WaitForSkillEnd(GameObject player)
     {
         player.GetComponent<Animator>().ResetTrigger("EndSkill");
-        player.GetComponent<Animator>().SetTrigger("ToDash"); // Trigger("ToSpinningAttack")
+        player.GetComponent<Animator>().SetTrigger("ToSpin"); 
         player.GetComponent<ButtonPresser>().CanPress = false;
         float time = 0;
-        //включить неу€звимость
-        //врем€ на атаку всегда меньше или равна общему времени
-        while (time < _characteristics.spinningAttackDuration)
-        {
-        //наносить урон с сопр€женными коллайдерами
-            _rigidbody.velocity = Vector2.right * _characteristics.spinningAttackVelocity;
-            yield return new WaitForFixedUpdate();
-            time += Time.fixedDeltaTime;
-        }
-        //выключить неу€звимость
+        var hitbox = Object.Instantiate(_hitbox, player.transform.position + new Vector3(0f, .9f, 0.0f), Quaternion.identity);
+        hitbox.GetComponent<DamageDealer>().damage = _characteristics.spinningAttackDamage;
+        hitbox.transform.SetParent(player.transform);
+        player.GetComponent<PlayerDeath>().invulnerable = true;
         while (time < _dashtime)
         {
             _rigidbody.velocity = Vector2.right * _characteristics.spinningAttackVelocity;
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }
+        player.GetComponent<PlayerDeath>().invulnerable = false;
         _rigidbody.velocity = _rigidbody.velocity * _characteristics.spinningAttackFinalVelocityPercent / 100;
         player.GetComponent<ButtonPresser>().CanPress = true;
         player.GetComponent<Animator>().SetTrigger("EndSkill");
