@@ -32,6 +32,13 @@ public class PlayerBouncer : MonoBehaviour
         var prev_velocity = rigidbody.velocity;
         rigidbody.velocity = rigidbody.velocity * _characteristics.swordBounceSlowdown;
         yield return new WaitForSeconds(_characteristics.swordBounceDelay);
-        rigidbody.velocity = (new Vector2(prev_velocity.x, Mathf.Abs(prev_velocity.y))).normalized * _characteristics.swordBounceSpeed;
+        Debug.Log(Mathf.Atan2(Mathf.Abs(prev_velocity.y), prev_velocity.x) * Mathf.Rad2Deg);
+        if (Mathf.Atan2(Mathf.Abs(prev_velocity.y), prev_velocity.x) * Mathf.Rad2Deg > (90f-15f)){
+            rigidbody.velocity = Skill.AngleToVec2(90f-15f) * _characteristics.swordBounceSpeed;
+        }
+        else{
+            rigidbody.velocity = (new Vector2(prev_velocity.x, Mathf.Abs(prev_velocity.y))).normalized * _characteristics.swordBounceSpeed;
+        }
+        
     }
 }

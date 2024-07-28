@@ -7,7 +7,7 @@ public class Skill
     {
         data = CombinationManager.Instance.GetSkillData("None");
     }
-    protected Vector2 AngleToVec2(float angle)
+    static public Vector2 AngleToVec2(float angle)
     {
         return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
     }
