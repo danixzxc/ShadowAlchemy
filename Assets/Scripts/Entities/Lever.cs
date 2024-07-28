@@ -31,11 +31,11 @@ public class Lever : MonoBehaviour
         CurrentPosition = startingPosition;
     }
 
-    void Turn(Position newPosition){
+    public void Turn(Position newPosition){
         CurrentPosition = newPosition;
     }
 
-    void Switch(){
+    public void Switch(){
         CurrentPosition = OppositePosition(CurrentPosition);
     }
 

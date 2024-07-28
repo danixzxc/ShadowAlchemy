@@ -32,12 +32,12 @@ MonoBehaviour:
   weightDamage: 5
   smokeBombPrefab: {fileID: 2212878955561692418, guid: 6e964b474818fda97b0c70ae8be98616, type: 3}
   smokeInvisTime: 3
-  hookPrefab: {fileID: 0}
-  hookTimeLimit: 0
-  hookSpeed: 0
-  hookEnemyPullSpeed: 0
-  hookDamage: 0
-  hookPlayerTravelSpeed: 0
+  hookPrefab: {fileID: 4417907025826461369, guid: 1067ec527177faf4893d32db48074fe8, type: 3}
+  hookTimeLimit: 0.5
+  hookSpeed: 25
+  hookEnemyPullSpeed: 5
+  hookDamage: 1
+  hookPlayerTravelSpeed: 10
   swordPrefab: {fileID: 8933829272211065171, guid: 6b9dc587ef0018d90908f566912990d7, type: 3}
   swordSpeed: 20
   swordDamage: 3
