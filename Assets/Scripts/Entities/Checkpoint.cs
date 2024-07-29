@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class Checkpoint : MonoBehaviour
 {
+    [SerializeField]
     private int ID;
     private bool _active = false;
 
@@ -11,6 +12,8 @@ public class Checkpoint : MonoBehaviour
     [SerializeField]
     private Sprite lit;
     private SpriteRenderer spriteRenderer;
+
+    private CheckpointManager _checkpointManager;
 
     public bool Active{
         get => _active;
@@ -30,10 +33,13 @@ public class Checkpoint : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        _checkpointManager = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>();
+    }
     void OnTriggerEnter2D(Collider2D collider){
-        PlayerCheckpointManager playerCheckpointManager = collider.GetComponent<PlayerCheckpointManager>();
-        if(playerCheckpointManager != null){
-            playerCheckpointManager.UpdateID(ID);
+        if(_checkpointManager != null){
+            _checkpointManager.UpdateID(ID);
             Active = true;
         }
     }

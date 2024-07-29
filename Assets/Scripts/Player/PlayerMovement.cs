@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask _groundLayer;
 
 
+
     [SerializeField]
     public InputActionAsset playerInput;
 
@@ -56,16 +58,26 @@ public class PlayerMovement : MonoBehaviour
     public OnGroundState onGroundState = new OnGroundState();
     public JumpingState jumpingState = new JumpingState();
     public FallingState fallingState = new FallingState();
-    
+
+    private CheckpointManager _checkpointManager;
+
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         ChangeHorizontalState(idleState);
         ChangeVerticalState(fallingState);
-        
+        _checkpointManager = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>();
+        transform.position = _checkpointManager.GetLastCheckpointTransform(); 
     }
 
+    public void Restart(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
     void FixedUpdate()
     {
         currentVerticalMovementState.FixedUpdate(this);

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1813431715
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -329,7 +329,6 @@ GameObject:
   - component: {fileID: 2559072814908539688}
   - component: {fileID: 2298372801047360965}
   - component: {fileID: 1961077921376651058}
-  - component: {fileID: -9146199248452016499}
   - component: {fileID: 982103624741872966}
   - component: {fileID: 4326685819603800183}
   - component: {fileID: 7330618711316383508}
@@ -407,7 +406,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5790619603164209483}
         m_TargetAssemblyTypeName: GesturesController, Assembly-CSharp
         m_MethodName: CastSkill
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -458,6 +457,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 73764623-66ea-4b77-9f00-f284e2634647
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6963864556004691631}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1bf257a4-7c76-4aa6-9521-ffcf0866a2ce
+    m_ActionName: Player/Respawn[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -597,18 +612,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-9146199248452016499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166237109921266165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabf268381c098fb8b74b332fcac9863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &982103624741872966
 BoxCollider2D:
   m_ObjectHideFlags: 0
