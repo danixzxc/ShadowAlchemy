@@ -6,7 +6,7 @@ public class Lever : MonoBehaviour
 {
     public enum Position {Left, Right}
     [SerializeField]
-    private Position startingPosition = Position.Left;
+    private Position startingPosition = Position.Right;
     public UnityEvent<Position> OnPositionChanged;
     public UnityEvent OnTurnedLeft;
     public UnityEvent OnTurnedRight;
@@ -20,9 +20,11 @@ public class Lever : MonoBehaviour
             OnPositionChanged?.Invoke(_position);
             if(_position == Position.Left){
                 OnTurnedLeft?.Invoke();
+                transform.localScale = new Vector3(- Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             else {
                 OnTurnedRight?.Invoke();
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
     }
@@ -41,5 +43,13 @@ public class Lever : MonoBehaviour
 
     static public Position OppositePosition(Position pos){
         return pos == Position.Left ? Position.Right : Position.Left;
+    }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        LeverToucher toucher = collider.GetComponent<LeverToucher>();
+        if (toucher != null){
+            CurrentPosition = toucher.whichWay;
+            toucher.OnLeverTouched?.Invoke();
+        }
     }
 }

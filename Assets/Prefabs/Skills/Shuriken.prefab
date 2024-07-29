@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8120902980956812879}
   - component: {fileID: 637604225989234838}
   - component: {fileID: 6360229660523219944}
+  - component: {fileID: 2590039240632965655}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -138,6 +139,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 1
 --- !u!114 &6360229660523219944
 MonoBehaviour:
@@ -151,6 +155,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7e69b3ee14bbb54b5702e308fd9310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2590039240632965655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095205037625662692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbf7c7bb531d048cb1a84e4067d6cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichWay: 1
+  OnLeverTouched:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8440596283548001063
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +243,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38335557
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d3a5df097c776fc6aab3b624bde99973, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
