@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a3cc4f3c0ad90df98553ee1354ea79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startingState: 1
   spriteOn: {fileID: 21300000, guid: eea0ad6efdd637e999dd50eda403a034, type: 3}
   spriteOff: {fileID: 21300000, guid: 70a1e799a1e35c2ddb8be43a9a0fa87f, type: 3}
   spriteBroken: {fileID: 21300000, guid: 92d900072ba290a1f8a8168329bbd171, type: 3}
