@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2931340074710231967}
   - component: {fileID: 6342528705681830341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3904129888636022874}
   - component: {fileID: 4178051071655525121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 8718377605850742661}
   - component: {fileID: 8883920539992668773}
   - component: {fileID: 7978311989374915517}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PatrolSamurai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
