@@ -3,5 +3,6 @@ public enum DamageType
 {
     Fire,
     Samurai,
-    Spike
+    Spike,
+    Light
 }

@@ -565,8 +565,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4326685819603800183}
         m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
-        m_MethodName: InvokeDeath
-        m_Mode: 6
+        m_MethodName: InvokeManaDeath
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -728,7 +728,7 @@ MonoBehaviour:
           m_StringArgument: ToDeath
           m_BoolArgument: 0
         m_CallState: 2
-  invulnerable: 0
+  ImmuneTo: 
 --- !u!114 &7330618711316383508
 MonoBehaviour:
   m_ObjectHideFlags: 0
