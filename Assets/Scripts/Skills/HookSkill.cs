@@ -55,11 +55,11 @@ public class HookSkill : Skill
             foreach (Collider2D thingCollider in thingColliders){
                 thingCollider.enabled = false;
             }
-            // Flip lever
-            Lever lever = collider.GetComponent<Lever>();
-            if(lever != null){
-                lever.Turn(Lever.Position.Left);
-            }
+            // Flip lever | No longer used due to Lever Toucher Class
+            // Lever lever = collider.GetComponent<Lever>();
+            // if(lever != null){
+            //     lever.Turn(Lever.Position.Left);
+            // }
             // Pull object towards player
             PullableBody pullable = collider.GetComponent<PullableBody>();
             if(pullable != null){

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38335557
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 4a5eec3d1123eb206855acb399157301, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5188792251688436715}
   - component: {fileID: 8073420003026720661}
   - component: {fileID: 2631583778787700312}
+  - component: {fileID: 4278395616080663395}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Untagged
@@ -161,7 +162,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38335557
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: -1
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -332,3 +333,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 1
+--- !u!114 &4278395616080663395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417907025826461369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbf7c7bb531d048cb1a84e4067d6cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichWay: 0
+  OnLeverTouched:
+    m_PersistentCalls:
+      m_Calls: []

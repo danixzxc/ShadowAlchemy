@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38335557
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa338a7417f96e510b14c020f0cedef4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5559219904004026311}
   - component: {fileID: 4038062566586494460}
   - component: {fileID: 5208883678446543974}
+  - component: {fileID: 2256913490997007777}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -139,6 +140,9 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 1
   bouncer: {fileID: 9162782591828575736}
   _groundLayer:
@@ -160,6 +164,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTrigger:
     m_PersistentCalls:
       m_Calls: []
   damage: 3
@@ -236,6 +243,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &2256913490997007777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933829272211065171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbf7c7bb531d048cb1a84e4067d6cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichWay: 1
+  OnLeverTouched:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9016039062572945777
 GameObject:
   m_ObjectHideFlags: 0

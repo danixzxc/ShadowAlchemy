@@ -36,7 +36,9 @@ public class SmokeBombSkill : Skill
         thing.GetComponent<Rigidbody2D>().velocity = AngleToVec2(angle) * player.GetComponent<Rigidbody2D>().velocity * 1.4f;
         player.GetComponent<SpritesTransparentMaker>().transparent = true;
         player.GetComponent<PlayerDeath>().ImmuneTo.Add(DamageType.Samurai);
+        player.GetComponent<Rigidbody2D>().excludeLayers |= LayerMask.GetMask("Enemy");
         yield return new WaitForSeconds(_characteristics.smokeInvisTime);
+        player.GetComponent<Rigidbody2D>().excludeLayers &= ~LayerMask.GetMask("Enemy");
         Object.Destroy(thing, 2.0f); 
         player.GetComponent<PlayerDeath>().ImmuneTo.Remove(DamageType.Samurai);
         player.GetComponent<SpritesTransparentMaker>().transparent = false;
