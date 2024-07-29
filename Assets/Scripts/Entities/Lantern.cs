@@ -5,6 +5,9 @@ using UnityEngine.Rendering.Universal;
 
 public class Lantern : MonoBehaviour
 {
+    [SerializeField]
+    private bool _startingState = true;
+
     public Sprite spriteOn;
     public Sprite spriteOff;
     public Sprite spriteBroken;
@@ -18,6 +21,7 @@ public class Lantern : MonoBehaviour
 
     public void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Turn(_startingState);
     }
 
     public void Break(){
