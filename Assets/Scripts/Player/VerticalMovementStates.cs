@@ -45,6 +45,9 @@ public class JumpingState : VerticalMovementState
         if (GetVelocityY(playerMovement) <= 0.0f){
             playerMovement.ChangeVerticalState(playerMovement.fallingState);
         }
+        if (playerMovement.IsGrounded()){
+            playerMovement.ChangeVerticalState(playerMovement.onGroundState);
+        }
     }
     public override void ExitState(PlayerMovement playerMovement)
     {      
