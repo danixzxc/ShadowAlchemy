@@ -119,9 +119,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Vector2.down;
         float distance = 0.33f;
         
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, _groundLayer);
-        if (hit.collider != null) {
-            return true;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, distance, _groundLayer);
+        foreach (var hit in hits)
+        {
+            if (hit.collider != null && hit.collider.isTrigger == false)
+            {
+                return true;
+            }
         }
         
         return false;
@@ -133,11 +137,14 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Vector2.right;
         float distance = 0.33f;
 
-        RaycastHit2D hit = Physics2D.BoxCast(position + new Vector2(0.0f, 1.0f), 
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(position + new Vector2(0.0f, 1.0f), 
             new Vector2(1.0f, 2.0f), 0.0f, Vector2.right, distance, _groundLayer);
-        if (hit.collider != null)
+        foreach (var hit in hits)
         {
-            return true;
+            if (hit.collider != null && hit.collider.isTrigger == false)
+            {
+                return true;
+            }
         }
 
         return false;

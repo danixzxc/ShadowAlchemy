@@ -20,7 +20,7 @@ MonoBehaviour:
   backstepFinalVelocityPercent: 100
   jumpMultiplier: 1.2
   landingMultiplier: 0.8
-  wallrunDistance: 1.7
+  wallrunDistance: 5
   wallrunAngle: 30
   wallrunFinalVelocityPercent: 60
   shurikenPrefab: {fileID: 8095205037625662692, guid: 1ebfbaba6f0b96ff49cc854f8dbaebc5, type: 3}

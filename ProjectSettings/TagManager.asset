@@ -42,6 +42,9 @@ TagManager:
   - name: Background
     uniqueID: 1284221299
     locked: 0
+  - name: Wallrun Area
+    uniqueID: 3495869857
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
