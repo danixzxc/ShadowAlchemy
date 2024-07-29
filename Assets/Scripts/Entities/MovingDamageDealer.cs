@@ -7,15 +7,25 @@ public class MovingDamageDealer : DamageDealer
     public float minimalVelocity = 1.0f;
 
     private new Rigidbody2D rigidbody;
-
+    private Vector2 _lastVelocity;
     void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision) 
     {
-        if(rigidbody.velocity.magnitude >= minimalVelocity){
+        Debug.Log(_lastVelocity);
+        Debug.Log(rigidbody.velocity);
+        if(_lastVelocity.magnitude >= minimalVelocity){
             base.OnCollisionEnter2D(collision);
         }
+    }
+
+    public override bool CanDealDamage(){
+        return rigidbody.velocity.magnitude >= minimalVelocity;
+    }
+
+    void FixedUpdate(){
+        _lastVelocity = rigidbody.velocity;
     }
 }

@@ -7,7 +7,7 @@ public class DamageableTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         var damageDealer = collider.GetComponent<DamageDealer>();
         Debug.Log(damageDealer);
-        if (damageDealer != null){
+        if (damageDealer != null && damageDealer.CanDealDamage()){
             OnDamage?.Invoke();
             damageDealer.OnDamageDealt?.Invoke();
         }

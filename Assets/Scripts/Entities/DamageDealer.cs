@@ -21,6 +21,7 @@ public class DamageDealer : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("PEnis");
         var body = collision.GetComponent<DamageableBody>();
         if (body != null)
         {
@@ -28,5 +29,9 @@ public class DamageDealer : MonoBehaviour
             OnDamageDealt?.Invoke();
         }
         OnTrigger?.Invoke();
+    }
+
+    public virtual bool CanDealDamage(){
+        return true;
     }
 }

@@ -33,4 +33,8 @@ public class FlyingSword : DamageDealer
             
         }
     }
+
+    public override bool CanDealDamage(){
+        return flying;
+    }
 }
