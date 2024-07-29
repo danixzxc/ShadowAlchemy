@@ -482,6 +482,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerInput: {fileID: -944628639613478452, guid: 2f6d351a55c855447bee1150563e7fea, type: 3}
+  slopeFriction: 0
 --- !u!114 &5790619603164209483
 MonoBehaviour:
   m_ObjectHideFlags: 0

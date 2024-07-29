@@ -8,6 +8,7 @@ public class RunningState : HorizontalMovementState
         if (GetVelocityX(playerMovement) <= playerMovement.MaxHorizontalVelocity){
             AddVelocityX(playerMovement, playerMovement.RunningAcceleration * Time.fixedDeltaTime);
         }
+        playerMovement.NormalizeSlope();
     }
 
     public override void EnterState(PlayerMovement playerMovement)
@@ -19,6 +20,7 @@ public class RunningState : HorizontalMovementState
     {      
         playerMovement.animator.ResetTrigger("ToRun");
     }
+
 }
 
 public class IdleState : HorizontalMovementState

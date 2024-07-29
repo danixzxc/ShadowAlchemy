@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public InputActionAsset playerInput;
 
+    public float slopeFriction;
+
     private HorizontalMovementState currentHorizontalMovementState = new HorizontalMovementState();
     private VerticalMovementState currentVerticalMovementState = new VerticalMovementState();
 
@@ -54,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
     public OnGroundState onGroundState = new OnGroundState();
     public JumpingState jumpingState = new JumpingState();
     public FallingState fallingState = new FallingState();
-
     
     void Start()
     {
@@ -128,6 +129,26 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    // @NOTE Must be called from FixedUpdate() to work properly
+    public void NormalizeSlope () {
+        // Attempt vertical normalization
+        if (IsGrounded()) {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f, _groundLayer);
+            
+            if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f) {
+                Rigidbody2D body = GetComponent<Rigidbody2D>();
+                // Apply the opposite force against the slope force 
+                // You will need to provide your own slopeFriction to stabalize movement
+                body.velocity = new Vector2(body.velocity.x - (hit.normal.x * slopeFriction), body.velocity.y);
+
+                //Move Player up or down to compensate for the slope below them
+                Vector3 pos = transform.position;
+                pos.y += -hit.normal.x * Mathf.Abs(body.velocity.x) * Time.deltaTime * (body.velocity.x - hit.normal.x > 0 ? 1 : -1);
+                transform.position = pos;
+            }
+        }
     }
 
 }
