@@ -18,8 +18,8 @@ MonoBehaviour:
   backstepVelocity: 10
   backstepDistance: 5
   backstepFinalVelocityPercent: 100
-  jumpMultiplier: 1.5
-  landingMultiplier: 0.6666667
+  jumpMultiplier: 1.2
+  landingMultiplier: 0.8
   wallrunDistance: 1.7
   wallrunAngle: 30
   wallrunFinalVelocityPercent: 60
