@@ -63,6 +63,8 @@ public class GesturesController : MonoBehaviour
         _gestureIndex = FindSlotByType(Type.none);
         if (_gestureIndex != -1)
         {
+            if (FindSlotByType((Type)gestureNumber) != -1)
+                return;
             _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(gestureNumber);
             OnGesturesChanged.Invoke(_gestures);
         }
@@ -83,8 +85,11 @@ public class GesturesController : MonoBehaviour
 
     public void AddFirstGesture(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ReadValueAsButton());
+
         if (context.started)
         {
+            Debug.Log("Press confirmed");
             AddGesture((int)Type.q);
         }
         if (context.canceled)
@@ -95,8 +100,11 @@ public class GesturesController : MonoBehaviour
 
     public void AddSecondGesture(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ReadValueAsButton());
+
         if (context.started)
         {
+            Debug.Log("Press confirmed");
             AddGesture((int)Type.w);
         }
         if (context.canceled)
