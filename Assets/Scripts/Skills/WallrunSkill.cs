@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 public class WallrunSkill :  Skill
 {
     private SkillsCharacteristics _characteristics;
     private bool skillCanceled;
-    private bool hasJumped = false;
+    private bool hasWallRunned = false;
     public WallrunSkill()
     {
         data = CombinationManager.Instance.GetSkillData("wallrun");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public override bool CanCast(GameObject player) {
         return player.GetComponent<PlayerMana>().Mana > data.cost &&
-            player.GetComponent<PlayerWallrunSensor>().GetWallrunAreaIntersection() && !hasJumped; 
+            player.GetComponent<PlayerWallrunSensor>().GetWallrunAreaIntersection() && !hasWallRunned; 
     }
 
 
@@ -43,7 +44,7 @@ public class WallrunSkill :  Skill
         animator.ResetTrigger("EndSkill");
         animator.SetTrigger("ToWallrun");
         collider.size = new Vector2(collider.size.x, 1);
-        hasJumped = true;
+        hasWallRunned = true;
         rigidbody.velocity = AngleToVec2(_characteristics.wallrunAngle)
             * rigidbody.velocity.magnitude * _characteristics.wallrunDistance;
 
@@ -58,10 +59,13 @@ public class WallrunSkill :  Skill
         {
             yield return new WaitForFixedUpdate();
         }
-        hasJumped = false;
+        hasWallRunned = false;
         
     }
 
-
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        hasWallRunned = false;
+    }
 
 }
