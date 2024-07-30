@@ -13,7 +13,9 @@ public class GesturesController : MonoBehaviour
     public UnityEvent<SkillData> OnSkillChanged;
     public UnityEvent OnSkillFailed;
     public UnityEvent OnSkillPerformed;
-    
+
+    [SerializeField]
+    private GameObject _cursor;
 
     private Skill _currentSkill;
 
@@ -43,6 +45,7 @@ public class GesturesController : MonoBehaviour
         }
         OnGesturesChanged?.Invoke(_gestures);
         _currentSkill = new Skill();
+       
     }
 
     private int FindSlotByType(Type type)
@@ -124,6 +127,16 @@ public class GesturesController : MonoBehaviour
         if (_currentSkill != null)
         {
             OnSkillChanged.Invoke(_currentSkill.data);
+            Color _cursorColor = _cursor.GetComponent<SpriteRenderer>().color;
+            if (_currentSkill.data.isDirectional)
+            {
+                Debug.Log("directional");
+                _cursor.GetComponent<SpriteRenderer>().color = new Color(_cursorColor.r, _cursorColor.g, _cursorColor.b, 1f);
+            }
+            else if (!_currentSkill.data.isDirectional)
+            {
+                _cursor.GetComponent<SpriteRenderer>().color = new Color(_cursorColor.r, _cursorColor.g, _cursorColor.b, .4f);
+            }
         }
     }
 
