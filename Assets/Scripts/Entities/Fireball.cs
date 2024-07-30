@@ -7,7 +7,7 @@ public class Fireball : MonoBehaviour
     public float speed;
     public Vector2 direction;
 
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
 
     void Awake(){
         rigidbody = GetComponent<Rigidbody2D>();
