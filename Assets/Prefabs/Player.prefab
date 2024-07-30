@@ -474,6 +474,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1bf257a4-7c76-4aa6-9521-ffcf0866a2ce
     m_ActionName: Player/Respawn[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a02ee266-aa26-44d7-a4a3-0d40169ec346
+    m_ActionName: Player/ShowHint[/Keyboard/f1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -518,6 +522,13 @@ MonoBehaviour:
   OnSkillChanged:
     m_PersistentCalls:
       m_Calls: []
+  OnSkillFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkillPerformed:
+    m_PersistentCalls:
+      m_Calls: []
+  _cursor: {fileID: 97268754592422242}
 --- !u!50 &1768697411543493604
 Rigidbody2D:
   serializedVersion: 4

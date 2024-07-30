@@ -13,7 +13,9 @@ public class GesturesController : MonoBehaviour
     public UnityEvent<SkillData> OnSkillChanged;
     public UnityEvent OnSkillFailed;
     public UnityEvent OnSkillPerformed;
-    
+
+    [SerializeField]
+    private GameObject _cursor;
 
     private Skill _currentSkill;
 
@@ -43,6 +45,7 @@ public class GesturesController : MonoBehaviour
         }
         OnGesturesChanged?.Invoke(_gestures);
         _currentSkill = new Skill();
+       
     }
 
     private int FindSlotByType(Type type)
@@ -60,6 +63,8 @@ public class GesturesController : MonoBehaviour
         _gestureIndex = FindSlotByType(Type.none);
         if (_gestureIndex != -1)
         {
+            if (FindSlotByType((Type)gestureNumber) != -1)
+                return;
             _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(gestureNumber);
             OnGesturesChanged.Invoke(_gestures);
         }
@@ -80,8 +85,11 @@ public class GesturesController : MonoBehaviour
 
     public void AddFirstGesture(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ReadValueAsButton());
+
         if (context.started)
         {
+            Debug.Log("Press confirmed");
             AddGesture((int)Type.q);
         }
         if (context.canceled)
@@ -92,8 +100,11 @@ public class GesturesController : MonoBehaviour
 
     public void AddSecondGesture(InputAction.CallbackContext context)
     {
+        Debug.Log(context.ReadValueAsButton());
+
         if (context.started)
         {
+            Debug.Log("Press confirmed");
             AddGesture((int)Type.w);
         }
         if (context.canceled)
@@ -124,6 +135,16 @@ public class GesturesController : MonoBehaviour
         if (_currentSkill != null)
         {
             OnSkillChanged.Invoke(_currentSkill.data);
+            Color _cursorColor = _cursor.GetComponent<SpriteRenderer>().color;
+            if (_currentSkill.data.isDirectional)
+            {
+                Debug.Log("directional");
+                _cursor.GetComponent<SpriteRenderer>().color = new Color(_cursorColor.r, _cursorColor.g, _cursorColor.b, 1f);
+            }
+            else if (!_currentSkill.data.isDirectional)
+            {
+                _cursor.GetComponent<SpriteRenderer>().color = new Color(_cursorColor.r, _cursorColor.g, _cursorColor.b, .4f);
+            }
         }
     }
 
