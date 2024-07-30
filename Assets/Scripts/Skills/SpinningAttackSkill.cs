@@ -43,18 +43,19 @@ public class SpinningAttackSkill :  Skill
         hitbox.GetComponent<DamageDealer>().damage = _characteristics.spinningAttackDamage;
         hitbox.transform.SetParent(player.transform);
         player.GetComponent<PlayerDeath>().ImmuneTo.Add(DamageType.Samurai);
-        player.GetComponent<Rigidbody2D>().excludeLayers |= LayerMask.GetMask("Enemy");
+        player.GetComponent<Collider2D>().excludeLayers |= LayerMask.GetMask("Enemy");
         while (time < _dashtime)
         {
             _rigidbody.velocity = Vector2.right * _characteristics.spinningAttackVelocity;
             yield return new WaitForFixedUpdate();
             time += Time.fixedDeltaTime;
         }
-        player.GetComponent<Rigidbody2D>().excludeLayers &= ~LayerMask.GetMask("Enemy");
+        player.GetComponent<Collider2D>().excludeLayers &= ~LayerMask.GetMask("Enemy");
         player.GetComponent<PlayerDeath>().ImmuneTo.Remove(DamageType.Samurai);
         _rigidbody.velocity = _rigidbody.velocity * _characteristics.spinningAttackFinalVelocityPercent / 100;
         player.GetComponent<ButtonPresser>().CanPress = true;
         player.GetComponent<Animator>().SetTrigger("EndSkill");
+        Object.Destroy(hitbox);
     }
 
 }
