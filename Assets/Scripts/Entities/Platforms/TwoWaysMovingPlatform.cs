@@ -74,10 +74,4 @@ public class TwoWaysMovingPlatform : MonoBehaviour
         _distancePerSecond = (_currentTargetPosition - (Vector2)transform.position) / _time;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        var rigidbody = collision.collider.GetComponent<Rigidbody2D>();
-        rigidbody.position = (rigidbody.position + _rigidbody.velocity * Time.fixedDeltaTime);
-    }
-
 }
