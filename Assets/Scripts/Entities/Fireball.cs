@@ -21,9 +21,9 @@ public class Fireball : MonoBehaviour
         rigidbody.rotation = angle;
         direction = Skill.AngleToVec2(angle);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
+
     }
 }
