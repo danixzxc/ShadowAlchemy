@@ -3862,7 +3862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567839167531599604, guid: c62218f88c39181818c0b9c55afc0bb0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5110318208842376255, guid: c62218f88c39181818c0b9c55afc0bb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4816,7 +4816,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.65
+  m_fontSize: 53.1
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7417,6 +7417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2123908979}
+  - component: {fileID: 2123908980}
   m_Layer: 5
   m_Name: Disclamer
   m_TagString: Untagged
@@ -7442,9 +7443,50 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -238}
-  m_SizeDelta: {x: 700, y: 300}
+  m_AnchoredPosition: {x: 514.75543, y: -270.82324}
+  m_SizeDelta: {x: 829.5109, y: 365.6465}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2123908980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123908978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60addf6fc7d05814e967282696f00d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Hold {0} {1} {2} to create skills
+
+    Press {3} to cast created skill
+
+    Some
+    skills are directed by cursor
+
+    Some skills need you to hold {3}
+
+
+    Press
+    {4} to start the game
+
+    {5} to show skills cheat sheet
+
+
+    Gamepad works,
+    but can be unstable.
+
+    Better play with keyboard and mouse'
+  actionMap: Player
+  actions:
+  - AddFirstGesture
+  - AddSecondGesture
+  - AddThirdGesture
+  - CastSpell
+  - StartGame
+  - ShowHint
+  _textComponent: {fileID: 1582032582}
 --- !u!1001 &2140409522
 PrefabInstance:
   m_ObjectHideFlags: 0

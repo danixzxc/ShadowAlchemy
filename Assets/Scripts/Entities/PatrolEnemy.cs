@@ -17,7 +17,7 @@ public class PatrolEnemy : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        //_animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _lineRenderer = GetComponent<LineRenderer>();
         if (_lineRenderer.GetPosition(0).x < _lineRenderer.GetPosition(1).x)
         {
@@ -32,10 +32,14 @@ public class PatrolEnemy : MonoBehaviour
         _lineRenderer.enabled = false;
         if(_startFromLeftPoint)
             _currentPoint = _leftPoint;
-        else
+        else{
             _currentPoint = _rightPoint;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
 
-        //_animator.SetBool("isRunning", true);
+        _animator.SetBool("IsRunning", true);
     }
 
     void Update()
