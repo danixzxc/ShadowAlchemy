@@ -5,7 +5,7 @@ public class Skill
     public SkillData data;
     public Skill()
     {
-        data = CombinationManager.Instance.GetSkillData("None");
+        data = CombinationManager.Instance.GetSkillData("");
     }
     static public Vector2 AngleToVec2(float angle)
     {

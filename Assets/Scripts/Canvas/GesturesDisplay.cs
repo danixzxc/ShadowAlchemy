@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class GesturesDisplay : MonoBehaviour
 
     [SerializeField] private Image[] _gestureImages = new Image[3];
     [SerializeField] private Image _skillImage;
+    [SerializeField] private TMP_Text _skillName;
 
     private void Awake()
     {
@@ -42,7 +44,8 @@ public class GesturesDisplay : MonoBehaviour
     {
 
         _skillImage.sprite = skill.sprite;
-        
+        _skillName.text = skill.name;
+
     }
 
 }
