@@ -11,6 +11,9 @@ public class GesturesController : MonoBehaviour
     private Gesture[] _gestures = new Gesture[3];
     public UnityEvent<Gesture[]> OnGesturesChanged;
     public UnityEvent<SkillData> OnSkillChanged;
+    public UnityEvent OnSkillFailed;
+    public UnityEvent OnSkillPerformed;
+    
 
     private Skill _currentSkill;
 
@@ -128,6 +131,12 @@ public class GesturesController : MonoBehaviour
     {
         if (context.performed)
         {
+            if(!_currentSkill.CanCast(this.gameObject)){
+                OnSkillFailed?.Invoke();
+            }
+            else{
+                OnSkillPerformed?.Invoke();
+            }
               _currentSkill.CastSkill(_angle, this.gameObject);
         }
 
