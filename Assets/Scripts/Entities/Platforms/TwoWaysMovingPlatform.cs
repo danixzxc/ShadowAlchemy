@@ -47,6 +47,7 @@ public class TwoWaysMovingPlatform : MonoBehaviour
         }
         _time = _timeFromStartToFirstPoint;
         _distancePerSecond = (_currentTargetPosition - (Vector2)transform.position) / _time;
+        _lineRenderer.enabled = false;
     }
     void FixedUpdate()
     {
