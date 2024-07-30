@@ -8,12 +8,11 @@ public class ConcentrationSkill :  Skill
 {
     private SkillsCharacteristics _characteristics;
 
-    private GameObject _desaturationImage;
+    private Image _desaturationImage;
     public ConcentrationSkill()
     {
         data = CombinationManager.Instance.GetSkillData("concentration");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
-        _desaturationImage =  GameObject.Find("/Canvas/DesaturationImage");
     }
 
     public override bool CanCast(GameObject player) {
@@ -28,11 +27,12 @@ public class ConcentrationSkill :  Skill
         player.GetComponent<PlayerMovement>().StartCoroutine(coroutine);
     }
 
-   
+
 
     private IEnumerator WaitForSkillEnd(GameObject player)
     {
-        var image = _desaturationImage.GetComponent<Image>();
+        _desaturationImage = GameObject.Find("/Canvas/DesaturationImage").GetComponent<Image>();
+        var image = _desaturationImage;
         var color = image.color;
        // image.color = Color.Lerp(color, new Color(color.r, color.g, color.b, .25f), 1);
         image.color = new Color(color.r, color.g, color.b, _characteristics.concentrationDesaturationPercent);

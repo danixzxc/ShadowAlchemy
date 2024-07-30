@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Restart(InputAction.CallbackContext context)
     {
+        Time.timeScale = 1f;
         if (context.performed)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 

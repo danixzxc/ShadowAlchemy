@@ -11,6 +11,11 @@ public class VolumeChangerSlider : VolumeChanger
         slider.onValueChanged.AddListener(ChangeVolume);
     }
 
+    private void OnDestroy()
+    {
+        slider.onValueChanged.RemoveListener(ChangeVolume);
+    }
+
     void Start()
     {
         float decibelPreference = PlayerPrefs.GetFloat(parameterName, 0.0f);

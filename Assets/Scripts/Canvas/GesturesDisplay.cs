@@ -26,7 +26,7 @@ public class GesturesDisplay : MonoBehaviour
         if (_gesturesController != null)
         {
             _gesturesController.OnGesturesChanged.RemoveListener(DisplayGestures);
-            _gesturesController.OnSkillChanged.AddListener(DisplaySkill);
+            _gesturesController.OnSkillChanged.RemoveListener(DisplaySkill);
         }
     }
 

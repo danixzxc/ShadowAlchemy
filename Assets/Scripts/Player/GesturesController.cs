@@ -27,6 +27,11 @@ public class GesturesController : MonoBehaviour
         OnGesturesChanged.AddListener(CreateSkill);
     }
 
+    private void OnDestroy()
+    {
+        OnGesturesChanged.RemoveListener(CreateSkill);
+    }
+
     private void Start()
     {
         for (int i = 0; i < _gestures.Length; i++)
