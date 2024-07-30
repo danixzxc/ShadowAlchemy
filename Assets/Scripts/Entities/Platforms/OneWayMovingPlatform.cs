@@ -39,7 +39,6 @@ public class OneWayMovingPlatform : MonoBehaviour
     {
         var rigidbody = collision.collider.GetComponent<Rigidbody2D>();
         rigidbody.position = (rigidbody.position + _rigidbody.velocity * Time.fixedDeltaTime);
-        Debug.Log(_rigidbody.velocity * Time.fixedDeltaTime + " - giving to a player per second");
     }
 
 }

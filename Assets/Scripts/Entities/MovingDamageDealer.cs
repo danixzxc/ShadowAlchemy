@@ -14,8 +14,6 @@ public class MovingDamageDealer : DamageDealer
 
     protected override void OnCollisionEnter2D(Collision2D collision) 
     {
-        Debug.Log(_lastVelocity);
-        Debug.Log(rigidbody.velocity);
         if(_lastVelocity.magnitude >= minimalVelocity){
             base.OnCollisionEnter2D(collision);
         }

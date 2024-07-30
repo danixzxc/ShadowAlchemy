@@ -20,9 +20,7 @@ public class ButtonPlate : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider){
         ButtonPresser buttonPresser = collider.GetComponent<ButtonPresser>();
-        Debug.Log(buttonPresser);
         if(buttonPresser != null && buttonPresser.CanPress){
-            Debug.Log("test");
             OnPress?.Invoke();
             spriteRenderer.sprite = spriteOn;
         }

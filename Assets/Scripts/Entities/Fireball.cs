@@ -25,7 +25,5 @@ public class Fireball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        //fireball pop animation
-        Debug.Log("Fireball pop");
     }
 }

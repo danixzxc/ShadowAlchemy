@@ -13,8 +13,7 @@ public class PlayerBouncer : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        Debug.Log(enabled);
-        Debug.Log(collider.name);   
+
         if (! enabled) { return; }
         var player = collider.GetComponent<PlayerMovement>();
         if (player != null){
@@ -32,7 +31,6 @@ public class PlayerBouncer : MonoBehaviour
         var prev_velocity = rigidbody.velocity;
         rigidbody.velocity = rigidbody.velocity * _characteristics.swordBounceSlowdown;
         yield return new WaitForSeconds(_characteristics.swordBounceDelay);
-        Debug.Log(Mathf.Atan2(Mathf.Abs(prev_velocity.y), prev_velocity.x) * Mathf.Rad2Deg);
         if (Mathf.Atan2(Mathf.Abs(prev_velocity.y), prev_velocity.x) * Mathf.Rad2Deg > (90f-15f)){
             rigidbody.velocity = Skill.AngleToVec2(90f-15f) * _characteristics.swordBounceSpeed;
         }

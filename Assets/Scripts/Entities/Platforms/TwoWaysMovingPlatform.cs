@@ -78,7 +78,6 @@ public class TwoWaysMovingPlatform : MonoBehaviour
     {
         var rigidbody = collision.collider.GetComponent<Rigidbody2D>();
         rigidbody.position = (rigidbody.position + _rigidbody.velocity * Time.fixedDeltaTime);
-        Debug.Log(rigidbody.velocity);
     }
 
 }

@@ -115,7 +115,6 @@ public class GesturesController : MonoBehaviour
         _currentSkill = CombinationManager.Instance.CombineSkill(temp);
         if (_currentSkill != null)
         {
-            Debug.Log(_currentSkill.data.name);
             OnSkillChanged.Invoke(_currentSkill.data);
         }
     }
