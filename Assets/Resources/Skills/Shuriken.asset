@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: shuriken
   isDirectional: 1
-  sprite: {fileID: 762548958, guid: 5f5ffc8f757e95f3e83e65bd605ea70b, type: 3}
+  sprite: {fileID: 1109674902, guid: 2089a2186cfcc6423b7e9c5d1aeb3367, type: 3}
   combination: 000000000200000001000000
   cost: 1

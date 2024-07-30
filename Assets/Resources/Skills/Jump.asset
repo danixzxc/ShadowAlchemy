@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: jump
   isDirectional: 1
-  sprite: {fileID: -905701662, guid: c673d36be8e067840a4c1f27a46a5bc6, type: 3}
+  sprite: {fileID: -1812264342, guid: 2089a2186cfcc6423b7e9c5d1aeb3367, type: 3}
   combination: 020000000000000001000000
   cost: 1

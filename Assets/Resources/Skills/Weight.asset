@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: weight
   isDirectional: 0
-  sprite: {fileID: -81621335, guid: 5f5ffc8f757e95f3e83e65bd605ea70b, type: 3}
+  sprite: {fileID: -2037261880, guid: 2089a2186cfcc6423b7e9c5d1aeb3367, type: 3}
   combination: 000000000300000001000000
   cost: 1

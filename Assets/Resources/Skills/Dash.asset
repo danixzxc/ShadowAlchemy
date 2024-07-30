@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: dash
   isDirectional: 0
-  sprite: {fileID: -908169745, guid: baae4e24566cd6e40a33c26003fdc2d7, type: 3}
+  sprite: {fileID: -868281290, guid: 2089a2186cfcc6423b7e9c5d1aeb3367, type: 3}
   combination: 030000000000000001000000
+  cost: 1
