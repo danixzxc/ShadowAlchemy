@@ -7468,14 +7468,17 @@ MonoBehaviour:
     Some skills need you to hold {3}
 
 
-    {4}
-    to show skills cheat sheet'
+    Press
+    {4} to start the game
+
+    {5} to show skills cheat sheet'
   actionMap: Player
   actions:
   - AddFirstGesture
   - AddSecondGesture
   - AddThirdGesture
   - CastSpell
+  - StartGame
   - ShowHint
   _textComponent: {fileID: 1582032582}
 --- !u!1001 &2140409522
