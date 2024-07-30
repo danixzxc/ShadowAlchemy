@@ -83,6 +83,9 @@ public class PlayerMovement : MonoBehaviour
     {
         currentVerticalMovementState.FixedUpdate(this);
         currentHorizontalMovementState.FixedUpdate(this);
+        if(rigidbody.position.y < -20.0f){
+            GetComponent<PlayerDeath>().InvokeDeath(DamageType.Fall, true);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
