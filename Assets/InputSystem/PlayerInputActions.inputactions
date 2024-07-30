@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShowHint",
+                    "type": "Button",
+                    "id": "a02ee266-aa26-44d7-a4a3-0d40169ec346",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -265,6 +274,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0dcbc195-603c-4ba8-a217-ad62f18aca76",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "ShowHint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e310d9da-5414-4001-ab67-39fb909783be",
+                    "path": "<Gamepad>/select",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ShowHint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

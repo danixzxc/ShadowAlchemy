@@ -44,7 +44,7 @@ MonoBehaviour:
   swordBounceSpeed: 12
   swordBounceDelay: 0.1
   swordBounceSlowdown: 0.1
-  concentrationDuration: 1000
+  concentrationDuration: 5
   concentrationTimeSpeedPercent: 20
   concentrationDesaturationPercent: 0.1
   spinningAttackHitbox: {fileID: 622838657528860051, guid: 253eab3608ef7a74b9b3fb39fd54a009, type: 3}
