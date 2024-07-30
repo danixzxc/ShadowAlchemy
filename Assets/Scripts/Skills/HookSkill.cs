@@ -56,6 +56,7 @@ public class HookSkill : Skill
                 thingCollider.enabled = false;
             }
             // Flip lever | No longer used due to Lever Toucher Class
+            // Needs to stop hook
             // Lever lever = collider.GetComponent<Lever>();
             // if(lever != null){
             //     lever.Turn(Lever.Position.Left);
@@ -79,6 +80,7 @@ public class HookSkill : Skill
             if(collider!=null && collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
                 float time = 0.0f;
                 Vector2 delta = ((Vector2)player.transform.position)-(Vector2)thing.transform.position;
+                Rigidbody2D ground_rigidbody = collider.attachedRigidbody;
                 while(delta.magnitude > 1.0f){
                     player.GetComponent<Rigidbody2D>().velocity = - delta.normalized * _characteristics.hookPlayerTravelSpeed;
                     time += Time.fixedDeltaTime;
@@ -86,6 +88,9 @@ public class HookSkill : Skill
                         break;
                     }
                     yield return new WaitForFixedUpdate();
+                    if(ground_rigidbody != null){
+                        thing.GetComponent<Rigidbody2D>().position += ground_rigidbody.velocity * Time.fixedDeltaTime;
+                    }
                     delta = ((Vector2)player.transform.position)-(Vector2)thing.transform.position;
                 }
             }
