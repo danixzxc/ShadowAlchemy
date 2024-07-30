@@ -300,6 +300,17 @@ Transform:
   - {fileID: 804834340}
   m_Father: {fileID: 1897507726}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199138931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3917413398809863993, guid: 44bb94cda3dbf714ca48897032199451, type: 3}
+  m_PrefabInstance: {fileID: 1437287449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5a75e72d9b96ee99be2a4a11007d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &224183244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 827226809698543782, guid: 9aafaffb6e9c1c0afb446135c86068e0, type: 3}
@@ -35127,12 +35138,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.11655712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1117674658}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1117674658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35705,12 +35716,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0.11655712}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1327877143}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1327877143
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35897,12 +35908,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -1.4741516, w: -1.6835365}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1330164212}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1330164212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36555,8 +36566,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1681421815
-  m_SortingLayer: -3
+  m_SortingLayerID: 1284221299
+  m_SortingLayer: -2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 09f5ee22f15280c4b9a98e3726b05b5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -36783,7 +36794,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1681421815
-  m_SortingLayer: -3
+  m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 9d2606f058be725409a2fc485ff375cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -37171,12 +37182,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -1.4741516, w: -1.6835365}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1736365024}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1736365024
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42932,11 +42943,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7762018087400903531, guid: 1ae713d1846cd364a8879db3e886090d, type: 3}
       propertyPath: _checkpointTransforms.Array.data[0].x
-      value: 287
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762018087400903531, guid: 1ae713d1846cd364a8879db3e886090d, type: 3}
       propertyPath: _checkpointTransforms.Array.data[0].y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762018087400903531, guid: 1ae713d1846cd364a8879db3e886090d, type: 3}
       propertyPath: _checkpointTransforms.Array.data[1].x
@@ -43151,7 +43162,7 @@ PrefabInstance:
     - target: {fileID: 2298372801047360965, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: ManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 199138931}
     - target: {fileID: 2298372801047360965, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: ManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -43159,7 +43170,7 @@ PrefabInstance:
     - target: {fileID: 2298372801047360965, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: MaxManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 199138931}
     - target: {fileID: 2298372801047360965, guid: 341da8fd75c9598a389f101eeea97e7a, type: 3}
       propertyPath: ManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_Value
