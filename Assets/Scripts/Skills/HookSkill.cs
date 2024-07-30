@@ -42,6 +42,7 @@ public class HookSkill : Skill
         thing.GetComponent<LineObjectFollower>().obj = player.transform.Find("Center");
         Collider2D collider = null;
         thing.GetComponent<DamageDealer>().OnCollision.AddListener((Collider2D _collider) => collider = _collider);
+        thing.GetComponent<LeverToucher>().OnLeverTouched.AddListener(() => cancelled = true); // Cancel on hitting a lever
         // Waiting for collision
         while(collider == null && cancelled == false){
             yield return new WaitForFixedUpdate();
