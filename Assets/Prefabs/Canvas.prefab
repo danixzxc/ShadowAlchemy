@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 4094945825679929130}
   - component: {fileID: 5400117950570849222}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Big text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 7066558070199886349}
   - component: {fileID: 4609992747538168470}
   - component: {fileID: 4696449659774841003}
+  - component: {fileID: 2778680444383760225}
   m_Layer: 5
   m_Name: DeathPanel
   m_TagString: Untagged
@@ -929,6 +930,40 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2778680444383760225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998845538271475094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f19dd71a4d921499382b831b346989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bigText: {fileID: 5400117950570849222}
+  _smallText: {fileID: 9094133375301753323}
+  _titles:
+  - type: 1
+    text: 1
+  - type: 1
+    text: 2
+  - type: 1
+    text: 3
+  - type: 1
+    text: 4
+  _descriptions:
+  - type: 1
+    text: 34
+  - type: 0
+    text: FIRE
+  - type: 2
+    text: SPIKE
+  - type: 3
+    text: LIGHT
+  - type: 4
+    text: FALL
 --- !u!1 &3166465772567434237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1507,7 @@ GameObject:
   - component: {fileID: 8782701210589520176}
   - component: {fileID: 9094133375301753323}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Small text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

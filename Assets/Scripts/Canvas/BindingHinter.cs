@@ -44,6 +44,6 @@ public class BindingHinter : MonoBehaviour
     }
 
     void OnDestroy(){
-        playerInput.controlsChangedEvent.RemoveListener(UpdateText);
+        playerInput?.controlsChangedEvent.RemoveListener(UpdateText);
     }
 }
