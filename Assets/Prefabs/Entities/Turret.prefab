@@ -130,10 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2183b4f6f595ea43b0496d106808830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2857822319008263778, guid: cccca0e317896f54cbbe41429518833e, type: 3}
-  spawningPoint: {fileID: 6030510763808749574}
   cooldown: 2
+  spawningPoint: {fileID: 6030510763808749574}
   angle: -180
+  prefab: {fileID: 2857822319008263778, guid: cccca0e317896f54cbbe41429518833e, type: 3}
+  spriteRenderer: {fileID: 6424384181890456996}
+  spriteOn: {fileID: 21300000, guid: 8e05ee77f06ac049687b456ad16041af, type: 3}
+  spriteOff: {fileID: 21300000, guid: 1cd01da87136de4bf8a840eb14f5ae28, type: 3}
 --- !u!1 &7978791385303428850
 GameObject:
   m_ObjectHideFlags: 0
