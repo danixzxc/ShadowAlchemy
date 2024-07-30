@@ -58,14 +58,14 @@ public class GesturesController : MonoBehaviour
         return -1;
     }
 
-    private void AddGesture(int gestureNumber)
+    private void AddGesture(Type type)
     {
         _gestureIndex = FindSlotByType(Type.none);
         if (_gestureIndex != -1)
         {
-            if (FindSlotByType((Type)gestureNumber) != -1)
+            if (FindSlotByType(type) != -1)
                 return;
-            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture(gestureNumber);
+            _gestures[_gestureIndex] = CombinationManager.Instance.GetGesture((int)type);
             OnGesturesChanged.Invoke(_gestures);
         }
     }
@@ -90,7 +90,7 @@ public class GesturesController : MonoBehaviour
         if (context.started)
         {
             Debug.Log("Press confirmed");
-            AddGesture((int)Type.q);
+            AddGesture(Type.q);
         }
         if (context.canceled)
         {
@@ -105,7 +105,7 @@ public class GesturesController : MonoBehaviour
         if (context.started)
         {
             Debug.Log("Press confirmed");
-            AddGesture((int)Type.w);
+            AddGesture(Type.w);
         }
         if (context.canceled)
         {
@@ -116,7 +116,7 @@ public class GesturesController : MonoBehaviour
     {
         if (context.started)
         {
-            AddGesture((int)Type.e);
+            AddGesture(Type.e);
         }
         if (context.canceled)
         {
