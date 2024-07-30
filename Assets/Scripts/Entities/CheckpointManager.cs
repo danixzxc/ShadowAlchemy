@@ -15,6 +15,10 @@ public class CheckpointManager : MonoBehaviour
     {
         current_checkpoint_ID = ID;
     }
+    public int GetId()
+    {
+        return current_checkpoint_ID;
+    }
     private void Awake()
     {
         if (instance == null)

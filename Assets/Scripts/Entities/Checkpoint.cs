@@ -27,6 +27,8 @@ public class Checkpoint : MonoBehaviour
             spriteRenderer.sprite = _active ? lit : unlit;
         }
     }
+
+
     public UnityEvent OnActivation;
 
     void Awake(){
@@ -36,6 +38,8 @@ public class Checkpoint : MonoBehaviour
     private void Start()
     {
         _checkpointManager = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<CheckpointManager>();
+        if(_checkpointManager.GetId() >= ID)
+            Active = true;
     }
     void OnTriggerEnter2D(Collider2D collider){
         if(_checkpointManager != null){
