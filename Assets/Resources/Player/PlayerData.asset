@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   startHorizontalVelocity: 3
-  maxHorizontalVelocity: 30
+  maxHorizontalVelocity: 10
   runningAcceleration: 2
-  startingManaSegments: 3
+  startingManaSegments: 4
   gainPerSecond: 1
-  losePerSecond: 2
+  losePerSecond: 2.5
   maxUpperAngle: 45
   maxLowerAngle: 45
   cursorDistanceFromPlayer: 3

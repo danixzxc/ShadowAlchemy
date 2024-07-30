@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Characteristics
   m_EditorClassIdentifier: 
   dashVelocity: 20
-  dashDistance: 10
-  dashFinalVelocityPercent: 50
-  backstepVelocity: 10
-  backstepDistance: 5
-  backstepFinalVelocityPercent: 100
+  dashDistance: 8
+  dashFinalVelocityPercent: 40
+  backstepVelocity: 15
+  backstepDistance: 8
+  backstepFinalVelocityPercent: 50
   jumpMultiplier: 1.2
   landingMultiplier: 0.8
-  wallrunDistance: 5
-  wallrunAngle: 30
-  wallrunFinalVelocityPercent: 60
+  wallrunDistance: 2
+  wallrunAngle: 12
+  wallrunFinalVelocityPercent: 80
   shurikenPrefab: {fileID: 8095205037625662692, guid: 1ebfbaba6f0b96ff49cc854f8dbaebc5, type: 3}
-  shurikenSpeed: 20
+  shurikenSpeed: 40
   shurikenDamage: 1
   weightPrefab: {fileID: 4152859808908955390, guid: 443bab0986f35b7cba02d13f2a929ecd, type: 3}
   weightGravityMultiplier: 2
@@ -39,17 +39,17 @@ MonoBehaviour:
   hookDamage: 1
   hookPlayerTravelSpeed: 10
   swordPrefab: {fileID: 8933829272211065171, guid: 6b9dc587ef0018d90908f566912990d7, type: 3}
-  swordSpeed: 20
+  swordSpeed: 40
   swordDamage: 3
   swordBounceSpeed: 12
   swordBounceDelay: 0.1
   swordBounceSlowdown: 0.1
-  concentrationDuration: 6
+  concentrationDuration: 1000
   concentrationTimeSpeedPercent: 20
   concentrationDesaturationPercent: 0.1
   spinningAttackHitbox: {fileID: 622838657528860051, guid: 253eab3608ef7a74b9b3fb39fd54a009, type: 3}
   spinningAttackVelocity: 20
-  spinningAttackDistance: 10
-  spinningAttackDamage: 5
-  spinningAttackFinalVelocityPercent: 50
+  spinningAttackDistance: 8
+  spinningAttackDamage: 3
+  spinningAttackFinalVelocityPercent: 40
   parryDuration: 5

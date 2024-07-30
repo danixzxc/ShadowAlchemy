@@ -46,6 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbf8dfee648686d7a29951deee55f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
   spriteOn: {fileID: 21300000, guid: 04fbbc3e8e4b30a1d90fdb40edfaf0b3, type: 3}
   spriteOff: {fileID: 21300000, guid: 7f0b2ba5c184e7c27822cf1d34c2cdcd, type: 3}
 --- !u!61 &519443444470187330
