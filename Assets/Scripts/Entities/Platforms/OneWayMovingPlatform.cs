@@ -25,6 +25,7 @@ public class OneWayMovingPlatform : MonoBehaviour
         _fullDistanceX = _targetPosition.x - transform.position.x;
         _fullDistanceY = _targetPosition.y - transform.position.y;
 
+        _lineRenderer.enabled = false;
     }
     void FixedUpdate()
     {
