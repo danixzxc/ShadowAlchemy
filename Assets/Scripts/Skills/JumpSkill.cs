@@ -32,7 +32,7 @@ public class JumpSkill :  Skill
     private IEnumerator SkillCoroutine(GameObject player, float angle)
     {
         PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
-        _rigidbody.velocity = AngleToVec2(angle) * _rigidbody.velocity.magnitude * _characteristics.jumpMultiplier;
+        _rigidbody.velocity = AngleToVec2(angle) * _characteristics.jumpVelocity;
         playerMovement.ChangeVerticalState(playerMovement.jumpingState);
         while (_rigidbody.velocity.y > 0.0f)
         {
