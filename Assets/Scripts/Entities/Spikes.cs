@@ -41,4 +41,17 @@ public class Spikes : MonoBehaviour
         Turn(!currentState);
     }
 
+
+    public void TurnOnForTime(float time){
+        var coroutine = TimedActivation(time);
+        StartCoroutine(coroutine);
+    }
+
+    private IEnumerator TimedActivation(float time)
+    {
+        TurnOn();
+        yield return new WaitForSeconds(time);
+        TurnOff();
+    }
+
 }
