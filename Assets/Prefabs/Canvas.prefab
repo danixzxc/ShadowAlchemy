@@ -946,27 +946,27 @@ MonoBehaviour:
   _bigText: {fileID: 5400117950570849222}
   _smallText: {fileID: 9094133375301753323}
   _titles:
-  - type: 1
-    text: 1
-  - type: 1
-    text: 2
-  - type: 1
-    text: 3
-  - type: 1
-    text: 4
   - type: 4
-    text: falllll
-  _descriptions:
-  - type: 1
-    text: 34
+    text: Crushed!
   - type: 0
-    text: FIRE
+    text: Burned!
+  - type: 1
+    text: Cut!
   - type: 2
-    text: SPIKE
+    text: Holed!
   - type: 3
-    text: LIGHT
+    text: Busted!
+  _descriptions:
   - type: 4
-    text: FALL
+    text: Too heavy to fly
+  - type: 0
+    text: Bro got too hot
+  - type: 1
+    text: Still not invulnerable to for steel
+  - type: 2
+    text: Watch your step
+  - type: 3
+    text: If you love being in spotlights you'd better to change profession
 --- !u!1 &3166465772567434237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,19 +1143,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 'Welcome to Ninjutsu Remnant game!
 
-    
 
-    Press and hold combinations
-    of {0},{1},{2} gestures to prepare Ninjutsu.
+
+    Press and hold combinations of
+    {0},{1},{2} gestures to prepare Ninjutsu.
 
     Press {3} to activate Ninjutsu.
     Some Ninjutsus need you to hold it.
 
-    
+
 
     {5} to see the list of all Ninjutsus.
 
-    
+
 
     Now
     press {4} to start running and have fun!'
