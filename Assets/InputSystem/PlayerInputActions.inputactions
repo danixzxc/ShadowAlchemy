@@ -224,17 +224,6 @@
                 },
                 {
                     "name": "",
-                    "id": "57038f9f-34bd-4130-b513-98176f11f8ec",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "StartGame",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "47d3a3a1-44ec-4b25-adeb-1c31b93d6cbb",
                     "path": "<Keyboard>/space",
                     "interactions": "",
