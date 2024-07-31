@@ -11,7 +11,7 @@ public class SpinningAttackSkill :  Skill
     private GameObject _hitbox;
     public SpinningAttackSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("spinningAttack");
+        data = CombinationManager.Instance.GetSkillData("Sword strike!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         _hitbox = _characteristics.spinningAttackHitbox;
     }

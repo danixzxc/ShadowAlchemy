@@ -11,7 +11,7 @@ public class HookSkill : Skill
 
     public HookSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("hook");
+        data = CombinationManager.Instance.GetSkillData("Hook!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         projectile = _characteristics.hookPrefab;
     }

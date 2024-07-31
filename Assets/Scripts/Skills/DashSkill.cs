@@ -11,7 +11,7 @@ public class DashSkill :  Skill
     private IEnumerator coroutine;
     public DashSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("dash");
+        data = CombinationManager.Instance.GetSkillData("Dash!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
     }
 

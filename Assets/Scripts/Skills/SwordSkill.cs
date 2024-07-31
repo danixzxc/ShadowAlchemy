@@ -9,7 +9,7 @@ public class SwordSkill : Skill
 
     public SwordSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("sword");
+        data = CombinationManager.Instance.GetSkillData("Sword throw!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         projectile = _characteristics.swordPrefab;
     }

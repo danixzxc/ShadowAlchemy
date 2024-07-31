@@ -9,7 +9,7 @@ public class WeightSkill : Skill
 
     public WeightSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("weight");
+        data = CombinationManager.Instance.GetSkillData("Weight bombing!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         projectile = _characteristics.weightPrefab;
     }

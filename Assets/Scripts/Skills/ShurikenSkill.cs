@@ -9,7 +9,7 @@ public class ShurikenSkill : Skill
 
     public ShurikenSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("shuriken");
+        data = CombinationManager.Instance.GetSkillData("Shuriken!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         projectile = _characteristics.shurikenPrefab;
     }

@@ -10,7 +10,7 @@ public class WallrunSkill :  Skill
     private bool hasWallRunned = false;
     public WallrunSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("wallrun");
+        data = CombinationManager.Instance.GetSkillData("Wall Run!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

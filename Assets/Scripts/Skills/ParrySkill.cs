@@ -8,7 +8,7 @@ public class ParrySkill :  Skill
 
     public ParrySkill()
     {
-        data = CombinationManager.Instance.GetSkillData("parry");
+        data = CombinationManager.Instance.GetSkillData("Reflect!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
     }
 

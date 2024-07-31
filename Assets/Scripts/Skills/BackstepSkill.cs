@@ -10,7 +10,7 @@ public class BackstepSkill :  Skill
     private float _time;
     public BackstepSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("backstep");
+        data = CombinationManager.Instance.GetSkillData("Recoil!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
     }
 

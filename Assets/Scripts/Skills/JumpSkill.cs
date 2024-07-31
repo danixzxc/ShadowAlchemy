@@ -10,7 +10,7 @@ public class JumpSkill :  Skill
     private float _time;
     public JumpSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("jump");
+        data = CombinationManager.Instance.GetSkillData("Jump!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
     }
 

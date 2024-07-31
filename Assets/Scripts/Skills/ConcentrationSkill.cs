@@ -11,7 +11,7 @@ public class ConcentrationSkill :  Skill
     private Image _desaturationImage;
     public ConcentrationSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("concentration");
+        data = CombinationManager.Instance.GetSkillData("Concentrate!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
     }
 

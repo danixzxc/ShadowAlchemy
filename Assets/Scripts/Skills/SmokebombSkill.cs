@@ -9,7 +9,7 @@ public class SmokeBombSkill : Skill
 
     public SmokeBombSkill()
     {
-        data = CombinationManager.Instance.GetSkillData("smokebomb");
+        data = CombinationManager.Instance.GetSkillData("Smoke!");
         _characteristics = CombinationManager.Instance.GetSkillsCharacteristics();
         projectile = _characteristics.smokeBombPrefab; //smokeInvisTime
     }
