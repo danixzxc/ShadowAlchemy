@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bebe9a12a8ab46ab1e04cad8d068e, type: 3}
   m_Name: Backstep
   m_EditorClassIdentifier: 
-  name: Dash!
+  name: Recoil!
   isDirectional: 0
   sprite: {fileID: 1961131652, guid: 2089a2186cfcc6423b7e9c5d1aeb3367, type: 3}
   combination: 030000000200000001000000
