@@ -147,6 +147,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c707bc24-dcf8-4684-9252-7347667723b9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "CastSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "99bcb16e-624e-4df4-a5b6-e38727236c31",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -169,23 +180,23 @@
                 },
                 {
                     "name": "",
-                    "id": "c707bc24-dcf8-4684-9252-7347667723b9",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "CastSpell",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3f8e085d-de59-4c6f-a913-f5a3aebd4587",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "CastSpell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95b6fcf2-d6f0-4885-a074-274209bad05a",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "StartGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -218,17 +229,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "StartGame",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57038f9f-34bd-4130-b513-98176f11f8ec",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "StartGame",
                     "isComposite": false,
                     "isPartOfComposite": false
