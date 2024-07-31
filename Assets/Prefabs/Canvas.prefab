@@ -962,7 +962,7 @@ MonoBehaviour:
   - type: 0
     text: Bro got too hot
   - type: 1
-    text: Still not invulnerable to for steel
+    text: Still not invulnerable for steel
   - type: 2
     text: Watch your step
   - type: 3
