@@ -279,6 +279,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7b4f590e-b732-496e-8d62-4b759e4935fe",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "ShowHint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0dcbc195-603c-4ba8-a217-ad62f18aca76",
                     "path": "<Keyboard>/f1",
                     "interactions": "Hold",
